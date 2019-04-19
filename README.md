@@ -19,3 +19,9 @@ HOW TO LOOK
 COPY RIGHTS
 ===========
 MIT LICENCE @garameki  
+  
+THANKS
+======
+  
+  GlyphWiki http://glyphwiki.org  
+  The fonts used in this contents are from this site.Thanks.  
