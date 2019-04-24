@@ -13,12 +13,10 @@ img {
 	width:20px;
 }
 </style>
-<script type="application/javascript" src="http://garameki.com/articles/yakushikyou/ruby.js">
-</script>
-<script type="application/javascript" src="http://garameki.com/articles/yakushikyou/text.js">
-</script>
+<script type="application/javascript" src="http://garameki.com/articles/yakushikyou/ruby.js"></script>
+<script type="application/javascript" src="http://garameki.com/articles/yakushikyou/text.js"></script>
 <script type="application/javascript">
-onload = function() {
+const start = function() {
 
 	/* 出典　來馬琢道　著　禅門曹洞宗典　大正八年七月初刊　版 */
 	/* 著作権 国立国会図書館デジタルコレクション Copyright © 2011 National Diet Library. All Rights Reserved. */
@@ -58,6 +56,25 @@ onload = function() {
 	}
 	id.innerHTML = letters;
 }
+
+onload = function() {
+	let flag1,flag2;
+	let count = 0;
+	const hoge = setInterval(function() {
+		flag1 = false;
+		flag2 = false;
+		if('flagRuby' in window) flag1 = true; 
+		if('flagText' in window) flag2 = true;
+		if(flag1 && flag2) {
+			clearInterval(hoge);
+			start();
+		} else {
+			console.log(count);
+			if(++count > 10) clearInterval(hoge);
+		}
+	},200);
+
+};
 
 </script>
 

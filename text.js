@@ -1,5 +1,5 @@
 (function(){
-	let text = "";
+	text = "";
 	text += "b1 kai3 kyou ge7 nl nl ";
 	text += "mu2 jou7 jin6 jin4 mi2 myou4 hou b2 hyaku2 sen man kou6 nan2 sou13 guu3 nl ga kon ken3 mon toku ju3 ji6 b2 gan ge3 nyo rai shin11 jitsu gi3 nl ";
 	text += "nl nl ";
@@ -87,5 +87,6 @@
 	text += "b1 e8 kou3 mon4 nl nl ";
 	text += "gan i4 shi5 ku doku b2 fu11 kyuu o ichi sai nl ga tou2 yo shu shou13 b2 kai2 gu6 jou12 butsu dou2 nl ";
 	text += "nl nl ";
+	flagText = true;
 	
 })();
