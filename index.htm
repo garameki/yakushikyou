@@ -13,8 +13,17 @@ img {
 	width:20px;
 }
 </style>
+<<<<<<< HEAD
 <script type="application/javascript" src="http://garameki.com/articles/yakushikyou/ruby.js"></script>
 <script type="application/javascript" src="http://garameki.com/articles/yakushikyou/text.js"></script>
+=======
+<script type="application/javascript" src="http://garameki.com/articles/yakushikyou/ruby.js">
+</script>
+<script type="application/javascript" src="http://garameki.com/articles/yakushikyou/text.js">
+</script>
+<script type="application/javascript" src="http://garameki.com/articles/yakushikyou/key.js">
+</script>
+>>>>>>> dc2287c70d102da7a0ff5faf8ef27aac53d23dff
 <script type="application/javascript">
 const start = function() {
 
@@ -22,6 +31,25 @@ const start = function() {
 	/* 著作権 国立国会図書館デジタルコレクション Copyright © 2011 National Diet Library. All Rights Reserved. */
 	/* インターネット公開（保護期間満了）Reserved period has been passed yet. */
 	/* LINK http://dl.ndl.go.jp/info:ndljp/pid/961952 */
+	
+
+	/* decompress */
+	const keyletters = key.match(/\d{1,2}/g);
+	let count = 0x28;
+	const pairs = [ ];
+	for(let letter of keyletters) {
+		pairs[String.fromCharCode(count++)] = letter;
+	}
+	let num = "";
+	for(letter of text) {
+		num += pairs[letter];
+	}
+	const nums = num.match(/\d{1,3}/g);
+	text = "";
+	for(let number of nums) {
+		text += String.fromCharCode(Number(number));
+	}
+
 	const letternames = text.split(" ");
 
 	const id = document.getElementById('result');
