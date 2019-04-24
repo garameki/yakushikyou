@@ -1,4 +1,4 @@
 (function(){
-key = "16666111177110000175516573311991188979856912237881767774412221207283848225249067876870";
+keyletter = "ZnnZZs2ZuZoush3ZZkkuu2hiiZZgZjyoZrhoZm4Z5ZaisuaktsanZbu3oZi2aZ";
 flagKey = true;
 })();

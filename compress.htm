@@ -1,5 +1,114 @@
+<!DOCTYPE html><html><head>
+<script type='text/javascript' src="text.js.original"></script>
+<script type='text/javascript'>
+onload = function() {
+
+(function(){
+	console.log(text);
+	let letter;
+	num = ""; /*global*/
+
+	let comp = text.replace(/\s/g,"Z");
+	console.log("comp");
+	console.log(comp);
+	const comps = comp.match(/.{2}/g);
+	const pai = [ ];
+	for(letter of comps) {
+		if(pai[letter]) {
+			pai[letter]++;
+		} else {
+			pai[letter] = 1;
+		}
+	}
+	console.log("pai");
+	console.log(pai);
+	const aa = [ ];
+	const bb = [ ];
+	for(let key in pai) {
+		aa.push(key);
+		bb.push(pai[key]);
+	}
+	/* sort */
+	let dumm;
+	const len = aa.length;
+	for(let ii=0;ii < len-1;ii++) {
+		for(let kk=ii+1;kk < len;kk++) {
+			if(bb[ii] < bb[kk]) {
+				dumm = aa[ii];
+				aa[ii] = aa[kk];
+				aa[kk] = dumm;
+				dumm = bb[ii];
+				bb[ii] = bb[kk];
+				bb[kk] = dumm;
+			}
+		}
+	}
+	//console.log("aa,bb");
+	//for(let ii=0;ii<aa.length;ii++)console.log(aa[ii],bb[ii]);
+	let sre,re;
+	count = 0x3a;
+	for(let ii=0;ii<31;ii++) {
+		sre = aa[ii].replace(/([\[\]\(\),.+*])/g,'\\$1');
+		//console.log(sre);
+		re = new RegExp(sre,"g");
+		comp = comp.replace(re,String.fromCharCode(count++));
+	}
+	console.log("comp");
+	console.log(comp);
+	let comp2 = "";
+	for(letter of comp) {
+		comp2 += String.fromCharCode(letter.charCodeAt(0)+1);
+	}
+	console.log("comp2");
+	console.log(comp2);
+	keyletter = "@@@"; /* global */
+	for(let ii=0;ii<31;ii++) {
+		keyletter += aa[ii];
+	}
+	keyletter += "@@@"; /* global */
+	console.log
+	console.log(keyletter);
+
+	
+
+})();
 (function(){
 
+
 comp2 ="c2CPBlJ?hf8;m;mMv>k@8Ijo7Ijo5Mj>nz@NL?c>izbD3=f<nb<l@7;T3=@2BhvV;mHbCp<lfoBnp<upl?kvBkj7U>hb<hf4;JKP=Fo22IjS?hj4;m;m;mU2=T:Hf9Mpo7;m;mHb=ibD4=L>{@4=L[R?h@>c>lP>zvvBnE=F31[up<kjo8[dF5;mIvE=F<D2>j8=F8=L3=i@2Bc>jdF=bGhbCp<lP3=T:Hf9;m;m;mU2=b<ljBlP8;m;m;bMv>ljBfOcvS?c2;bMv>ljBfOL?c2;bMv>ljBf6=@9U2CjBfOcvS?nv>k@8=p<c2CjBfOL?sjBkjo9=p<c2CjBf6=@9[xbH@7[=p<c2CjBfOcvS?lz@Nc2CjBfOL?lz@Nc2CjBf6=@9Cz@5;m;m;mU2=b<ljBhf8;m;mIj5CjBfOcvS?c2[u@5Hb<Av=i@2Bc2[uPBhfBebGe@>c2[ibS?nv>k@8=FoBc2Ij5CjBfOL?c2[u@5Hb<Av=i@2Bc2IjoN;zv?lJ?{p?c2[dF[f3;JCP22U2Ij5CjBf6=@9U2[u@5Hb<Av=i@2Bc2[u@8KjNeP=i?c2[jdF=bGnv>hf7;m;m;mU2Mb>lb>iT5;zR?ib>sbMjS?ub=FoBlz@;m;mCT5IjN{PBcp=buQ;Hz@>kjoNiT5;zR?ib>sbMjS?ubIj;=i@8CfoBhpBpo:CP>DE;[epBjdF=PCvBzbD7;=ib2>sj>kX;=FljBgv>j25CvE;Cvv>gv>j25=Flj4;=Flj4=pDN{fCvE;CvE=pDN{f=Flj4;IV=@25Hz@3=FlX;[zbDNcV;J[{f;=ib2>sj>kX;[{f=L[L?DE=@;[gE=i@2Bgv>nfS?gv>D:[gv>k@7[gv>{@Ogv>hfo7;[{fCp>Dv>divv;ME=Flj>nv>kV=@25Hz@3=FlX;Mv>hfo8;jNcjN{fSE=F<j8;ME=Flj4=i@21C@6Mj=pD7[i@;Mv>hfo8CP;;P3=F>nv>j8=Flj>lP;Mv>nv>nz@3;[zbD5Mv>nv>nz@>kjo4;;P3=F>nv>s@4=F2BzbD5Mv>s@4=F2Bkjo4;Mv>D4=ivvBnfS?e@3;Mv>dF[zbD5Mv>upD;[j5ME=L>upl?lp3;UWeP4=bS?ubBf6;[iT5;zR?ib>sbMjS?ubCp3;=FoBnv>lf9Hf7;Mv>lf9Hf7Cp3;Mv>v>lz@22[gv:;[po21KjBjdF=P;[ufo8[u@2>nV=@25;Cv22Cz@5;f[iT6;=b<tf=LUvS?fOiT5;zR?ib>sbMjS?ubCp3;[upl?b;pl?ubKb=b<nzbD=b<cWeP4;Cp>dFBiT5;zR?ib>sbMjS?ub;[{f[eP=Fo6=iv21;[{f[ebGnz@3=iv21;[{fMv>k@8=iv21;[{fMv>u@>u@3=iv21;;@>kWjdF=PCV;=Fo22IjS?gv>lp:;Cp3=fS?iT5;zR?ib>sbMjS?ub=iv21;=pD5=fuQ=iv21[xbuQ;HzYufj6HzYufj6;[ib>sbHzYufj6;[ib>sb=@9HzYufj6;UWeP4=bS?cb>lb3;[iT5;zbD=FoBlz@;;m;m;mU2[zbD=F=iv21;m;m[po6;Cp8KpBlp8Kp4=fo7[eb6KX;MYu@25Cj27;=ib8Ub>lb3;;m[po6;Cp8KpBlp8Kp4=fo7[eb6KX;MYu@25Cj27;=ib8Ub>lb3;;m[po6;Cp8KpBlp8Kp4=fo7[eb6KX;MYu@25Cj27;=ib8Ub>lb3;;m[[[[[;m;mU2[zbD=FK?sjC@;JKbGL<hb<l?epl?lz@;mU29[u@=b<{p?i@=FHf<kp?g?k@>zbD3;m;m;J[{fHbMpo;[jdFIGcbCbUpo;[zv?hf=LCpD;=F>lp?hp<k@4;Iv?sR?p<k?hf3;[J[ebGcjuQ=vv;=i?ibdF=fo;j<hv;Up=bS?nbCb3=buQ;=b<nb<spD=fo;Czv?lpl?@;[ebGkjo;Ub>sbMpo>lp=FBuf<szv?ibdFUv;;j<F;j<u@3;M?sJ?eP=iv;Cv>hJ?j;z@;;GX=fS?i@;;m;j>kGnT>kE=FS?sj>L?p?kX;I@NcvS?jBkjo3;Ivv>{b;jCGif<eb<jdFCfo;[v=FuQ>diR?kj4;C@BcbCbUpo;CJl?D?hbuQ=i@;[izR?hpo3;=f=po;[zvGhb<f<tfuQ;J[{f=p?svj;=LUvS?nJ?h@;Czv?L<ebGhT;IE=i@>l?epD;Kz@3=LMp<Ab;H@3=i@4=i@5Ip;[j>Jl?sj>sbD;[{@>L?ufo>kj;=L[v>k@6Cp3;;m;j>kj=f=po;=T>nT>kE=FS?sj>ep?kj>hpo3;[{f<{bG{f<{P;MT>kE=FS?sX;;J>jNebGF3;Cb<A@6Hb=fuQ;=LUvS?nJ?h@;[L<hb<l?epD;[j>cbS?h@3=i@4;=L>ufoBv>k@6;Kj>zbDBb<sbD;[{@>L?ufo>kj;=L[v>k@6Cp3;;J>lp<ubGdi@;Hpl?{f<AjNzvX;[u@NX;J3=fuQ;MT>kE=FS?sj>hpo3;[zvj;f<hb<tfuQ;HYu@>sR?npo;;mUvS?h@BnT>kE=FS?sX;[u@Bi@>lp4=F6;CbBkvvBh@5Cb=ib>u@>cvS?ep;[E=fCP;MJ?k@7K?sj;UvS?hp?zbD=FK?sjC@;JKP;[@3=i@7[u@>hbD;Mz@>hz@>fo>nT4;[{f<{fj;=fCfo>hf4;M?k@8=F4;I@9HpI@:UE;[ufo;j<Aj;UvuQ;UbCbUpo;MT>kE=FS?sX;[F4=f=p<zbD=FK?sjC@;JKP;[L<hz@>cp=bS?e@>kj;[ibS?kvV;jBebGhb<sz@3=L[v>k@6;=L>hv>lP>upD;;m[eP>jdF[ebGhT;Hb<hbKP=f;[upl?b;pl?ubKb=b<nzbD=b<cWePBkj;Ij5=F<lp?nz@3;=Flj;f<A@8[z@;M?sJ?nv=iE;M?ifo3=fCP;[j5=b<kvV;j4;[ebGk@:UE=@;[ibdFIvvB{vGhz@4;=i@9Hp<hp3=Fo;Kz@>jdF=bGv>k@6;;JHbM?j7;;m[eP3;jBebGhT;Hb<hbKP=f;[upl?cWePBkj;=Fo;JK?sj;;bGhf5Mz@>ufuQ;I@7Mv>lf[f;Cp?nz@>l@>eP;C?epl?hGhj;=F<{f<b<kvv;[foBn@=i@9Hpo;CbBp;jdFHbuQ>zvv>nz@4=i?k@21;=FuQBn@>lPBhz@5;[{vGj8=L3=iV;=b=LIj6H@3;;m[eP3=b<ebGhT;Hb<hbKP=f;[upl?cWePBkj;[j5M?sJ?n?ifo3;[dF[f>i@>cfo;Kz@3=L[v>k@6;CP>upl?n?kjo4;=L>kvBz@>npuQ;MR?sz@3=i?k@21;[E=L>c@=i@:;;m[eP3=F7[ebGhT;Hb<hbKP=f;[upl?cWePBkj;;zbD=L[v>k@6;Hz@>kYe@3=ib;=FuQBsz@>b<kvv;UWePBe@>divv;;zR?hz@3=i@21Mpo;[epD>hR?k@22=ib;CP>jNebGk@22;;Gb<szvE=F8;;m[eP>hpBebGhT;Hb<hbKP=f;[upl?cWePBkj;;zR?v>n?sz@;M?ifo>v>k@6;[pHYL?divv;=iv5Hz@>cp<hz@3;[jdF=PCP>sz@3;[upl?gv>lfS?lP5;HV=b<kv5CP5;=fuQ>v>lj>cT;Mp<hbMJ?j6;Hfo>upD=i@22I@7;[gv>eYbD=iV;;m[eP>spl?ebGhT;Hb<hbKP=f;[upl?cWePBkj;;zbD=L[v>k@6;Hp3=F<hf>sfuQ;=LCpo>gv>hV;=iv?s@;HT>hv5;M@Bsz@4;[po>b3;Kf<iflj;[ibGsE;[izR?sP3;[ufo5Cz@3;=iv6=ivOcJ?D4;Mp<hbMJ?j6;[jdF=PCP>upD;[ub<A@7CfuQ>f4;=LCpo>hTBhV;Mv=L=FuQ5CV;;m[eP3=FdF[ebGhT;Hb<hbKP=f;[upl?cWePBkj;;zbD=L[v>k@6;=i?cJ?FuQ=P;M?D5M?lj4;M?j9M?zbD;Mv=Fo>n?lf>;Uj<hv?ubCV;Hb=F8MJ?h@;[jdFCJ?hp3;j5;=i?cz@=FuQBkp;=F<AjoBb<sbD;Cf>{pD=F9HV;=FuQBlP>i@B{pD3;;P3=F:=i@2>upD;M?k@8UWeP4;;m[eP>ibdF[ebGhT;Hb<hbKP=f;[upl?cWePBkj;;zR?E;J4;jo;[X;JBizbD>bD;=F8=L>FuQ;@;HpD=i@2BpoBsj4;Hb<Ab4;J4=Fo;Mp<hbMJ?j6;[jdF=PCP>upD;[ufo3;JBk@23;T;HvBk@:UE=@;;P3=F:=i@2>upD;M?k@8UWeP4;;m[[eP>DOebGhT;Hb<hbKP=f;[upl?cWePBkj;Kz@3=L[v>k@6;=ivS?nb>sbM@;HfBebS?jdF=P;HfNe@>ufoBcbD;;zR?eb=iv6=iv6;[R?lfoBdi@>sjo;CP>u@Nj<k@24;[dF>p=i@7Cfo4;[{fo>sz@3=iv5Ivv5;=LUp=bS?hz@3;=pD=i@2>n?k@8;=i@7[u@>cWeP4;;m[eP>kvvBebGhT;Hb<hbKP=f;[upl?cWePBkj;;zbD=L[v>k@6;[p?i@=L>hb3;UR?spD>cf<ubuQ;CfGifGs@>hpD3;[xR?u@5Cz@BsjD;Czv?J>n?sz@;=P3;T>sz@5IpD;[F3=ivE=fo>FuQ;=F<AjoBkvBD4;;zR?np<hbMz@;[j5HYgvl?epD;[jBkjo>sjljCp3;CP>upl?hfBebuQ;[jdF=bGvBD4;m[eP>kvvBjdF[ebGhT;Hb<hbKP=f;[upl?cWePBkj;;zbD=L[v>k@6;Cj5CbuQ=L3;@;[j>hv>kjljCp3;[{@4=L[R?h@3;[upl?np<hbMz@;=fo4;fo>kvBkj7;HYu@5=foNj5;I@8Mz@Npo5Ijlj;U@3=pD>hp3=Fo;HpNjNL?nj;[FuQ>lz@Nb<sbD;;jCpoBszvE=F8;;m[eP>kvV;jBebGhT;Hb<hbKP=f;[upl?cWePBkj;;zbD=L[v>k@6;Uj<n?j:[gvD3;MpoBdivv>lT3;fuQ;[divvBzYFuQ;@;;zR?np<hbMz@;=fo4;fo>kvBkj7;;JHp3=LC@5;=pDBupD=iv6=iv6;I@8Mz@Nj:[gvD3;[zbDNupl?jdF=P;[i@5=i@9Hp<hV;Hf6MTNe?l@6;Cv7KbD;=i?hX;[{vj=Fo4=L>hT5;CP>sz@>nTB{pD3;;mMT>kE=FS?sX;[{f[j>F4=f=po;[zbD=FK?sjC@;JKP;[@3=i@7[u@>hbD;Hz@>cp=bS?e@>kj;=L>ibS?kvV;j4;Mj>nz@5I@8HT;;mUvBkj8MT>kE=FS?sX;[F4=f=po;[zbD=FK?sjC@;JKP;Hz@>cp=bS?e@>kj;=L>ibS?ebGhT;Czv?FBcvS?ep;C?epD=i@9Hpo;Hb;zR?jdFC@7;;zR?jdFC@7[J3;=fS?gE;@>kjo4;;f<FBcvS?ep;[jdFC@4=i@22I@7;M?E;J4;jo;[zbD5M?bD=iV;Czv?DBp<A@21;K?sGj>kj4;Cpo5I@25CbGe@3;I@BlfuQBhvv>lbD;Cfo5=@>sbM@;CP3=FdF[i@5I@23;[zbD5;J=PBi@3;Hpl?sbD=fCP;C?epD=i@9Hpo;[u@>nv=ibNcfuQ;[pHp>lpl?divv;[E;jBcp=bS?nbCb3=buQ;[jdFMz@;jdFCp?ifo4=i@8;;jBnJ?hbuQ>lp?ifo4=i@8;[{f[FBn?sz@;Mv=iv>cp=buQ;=iv=F8I@8=iv7;Ij8[gvBcvuQ=L4;=FuQ4;@>kj7;[F4=f=po;[zbD=FK?sjC@;JKP;=i@7[L?i@N{@;[{fCp>nT>kE=FS?sX;=L[E=Fo5=Fo4;[{fo;T4=F21[{fo;J4;j<u@3;[@>u@5Hb<A@24;[FBcvuQ=fCP;;m;j>kj=f=po;UvBh@6MT>kE=FS?sj>ep?kj>hpo3;MT>kE=FS?sX;[E=L=i?k@21;[gE=Flj>{f<bD;[zvGfNup<sjo3;[gv>dFBgv5=f3;Czvv=f>lbNi@6;HvNdF5M?dF;CfuQBp=Fo5Cpo3;[ubIvN{P>i@5;HpoBlb6=iv8Hp6;CfoBlpuQ=ibKP;Hp3=FoBgv>lj6;=fuQ>gv>hzR?j6;;Ghz@3=f>kj;;JCbSE=Fo;jD;Ijo5=i@2BuQv=ibD;UvBv>n?sz@;CfoOup<v>k@6;=ibD3=ivV=F9[{P3;[pHp>kj5=Fo;=i@2Ngv>kvBz@3;Cb7Cz@6;@>J;[gvOcp3=P5=F21;;?cj=b=F22;Czv?sPCpuQ=ib;[F4=L[v>k@6;IvE=F6Mz@6Ivv6;=i@2BhbBlj7CP;[xR?i@7=i@24=iV;[zvV=ibD4;j<hfo4;[{@Nupl?{b<npo;[zbD=FK?sjC@;JKbGnJ?lp3;Cp<{PBbD=iV;[{T>upl?pD;fo3;[F4;JKbGnz@;=pDNp;fo>kj;Ivv>F4=LBnpSE;Hfo3=i@24;j<divv;[upD=ivl?nz@6;fo3;[j21[bD=ivBD4;[gv>sR?Jl?sbD;C@5Hz@>f4=f3;=T>uT3=f3=ib;[jdF=P=L>E;=FuQBn?up<AbD;[{fo>kj8=i@25;@3;[jN{?npD=iv9=pD3;CfuQ5;jD=F<cvo;=f>sbGhE=ib;Cz@OJ>{P>npuQ;;mUvBkj8MT>kE=FS?sX;;zbD=L[v>k@6=vGp;JKbGkV=LHbD3=L4;Gib=F2>sb;[E=vGgv>ib=F2>sb;GibCj8=pD6;[v>p=F2>sbCj:=pD6=vGupl?gv>f7;f<lX=i@7Cfo4;[E=vGgv>lX=i@7Cfo4;jCj9[ubMp<pUvuQ=L3=fuQ;CP6CJ?kjo5Hj4;[gE;@>hfBsz@6;[E=vGubMpo;G{@6I@8MT6;[zvvB{@6I@8MT6;[gvDtYifX=FoBlp3;IjN{f[F[ub3;Cfo7U@4=i@7[i@;[j>nb>ib<u@6;;J[{fHv5;j<kj5Hz@>kbCfo4;UvBsz@>n?sz@;H?ufGv>k@OeYePCfo8Cz@7=F6=L[v>k@6;[@>pIjBhpD>c@7=i@2Blj7=ivBsvBufo>n?hvv;zR?upl?np<Aj6;[zbD=FK?sjC@;JKbGnJ?h@;Uf<AbBR?hz@3;=iv5=L[{f<i@;[gv>eYbD=iV;=fuQ>v>gE;@3;=ib4=L[R?hz@3;=iv5Hz@>{f<i@;[eYbD=iv5=ib;[jNF4;JKP;[L<hb<jBsjlj;Kz@>hp>hfoN{fo4;[{b<np<nJ?h@;Ivv>FBnz@6Ivv6;Hfo3=i@24;j<AV;[upD=i@7Cfo4=i@26Ijo6;[{f<k@9[j8KbD;Ufo;@3=ibBlf3;=ivBWFCf3;;JKbGL?divv;IvBkj7HbD3=L4;M?v>lj>cT;=i@7CfoBubMpo;HfBkjo7Ijo5Hj4;KjB{@6I@8MTOgv>c@4=i@7[i@;[gv>j>nb>iT;[{fo>kj8=iv5Hz@3;=LUp=bS?hz@3;=pl?upl?fo>nT4;;mUvBkj8MT>kE=FS?sX;;zbD=L[v>k@6;CfoOup<AjuQOup;Ij5=T>lj>ub3;[u@Neb=b<bD=ivBdiv?n?sz@=f<{P5;IV=LHzbD>D4;IvBhzbD>DBj6;Ivv>FBnz@6Ivv6;Mj4=i@24;j<hfo4;=bHzv?cbBeb>sv5C@8[FNcfo>ebSE;Cj5CbS?FuQ;@;[v5I@2Ogv7Ivv7;[{vGsp;Ghz@3;[xR?upl?X;jo;=i@2BlpHf3=fo6;=b;jo;?cj;IvBub>D8[zbD6;C@8[gv>kjN{P4;zbD=ibD4;j<divv;[{@5Mp<tf=po;[zbD=FK?sjC@;JKbGnJ?hp?zvV=FO{f<jo3;Cp<cvBpD;fo3;=F:=FoBljBf6;[jNcvS?kjo>sjlj;=i?DBhfBebuQ;=LCpo3=@BsX;[dF[fBubMp<l@8HE=i@>i@;I@26HvvB{f<zvv5;[fGeT>nb>n@4;[ibM?nz@>lpD3;CbuQBcpo3;p?hb5;HfBebS?jdF=P;=i@2Bs@Bcz@=F24;[zvvOF>D4;@;;mUvBkj8MT>kE=FS?sX;;zbD=L[v>k@6;C@5Cj6CP7Kj4;Cz@8=p?u@7=i@27;;p?sb<kjNub3;[j5=FoBhp7[j8;[{@4=Y{@Odi@4;=iv6=ivOR?h@>ufoOufo>k@2OX;[gE;z@>zbDBkj6;Hp8=p?c@5HP;H@6=i@28=TBsjo;I?dL[u@3=Fo6=fuQ4=L=iv=i@24;=iv:Hp>lfuQ5;jD;=P6=F2NzbD=ib6Kb3=fuQNcb>u@3;=LNfo5;j<nz@;=bHp>hz@B{@3;[jNbD=iv21IvuQ;j=iv21=p=F8;[poBnj5CpNe@3;=iv21Cj=F26Cj7;Kz@>eT>FBnz@6;Czv?f7Hp3=Fo;[{f=L[v>k@6;zR?upl?np<Aj6;[zbD=FK?sjC@;JKbGnJ?hp?F4=L[R?kj6;=FuQBgE;@>hP;[jdF=bGufoOufo>lP>lGkj9=Fo4;Kj>zbDBb<sR?nv=po3;p?j8Czv?lfo7Cpo6=Fo4;CbD>lbD>lTNfuQ;[pIj5=L>kV;=i@2BpCj6=pD3;[gE=@=Fo7Kz@7Hp8[X;z@>zbD4;UvBkj8MT>kE=FS?sX;zR?E=F7=iv;UjuQ=vv;UjuQ=vv;j6;[vOib3=p>lb8;[vOib3=F27Cb8;Czv?J>k@7=Fo5;[{fo;T4=F21;[{fo;J4;j<u@3;[E;@>kvBkj7[ibdFUv<tP7CP8[xR?lJ?jdF;fo4;[xR?cV=b<hbSE;IvBkj7HbD3=L4;[j5=FO{f<lpo>hb<A@24=PBi@3;Hpl?sbD=fCP;M?sJ?kvOcvuQ=L>dL?np<A@7[i@;;GnjBk@27=ib;;zR?np<tf=po;[zbD=FK?sjC@;JKbGnJ?h@;KjoBnz@6Ivv6Ij;[v>ibdF[ebGcp=buQ;Hp>nJ?xbuQ;Mpo5IE=FKj>cp=buQ;CT5=f[p<cp=bS?upl?eP=fGcp=buQ;Mv>kjoBj8Up=bS?i@NeTBlfBcp=buQ;[zR?p?cp=bS?zR?k@8Up=bS?nj6KpDBcp=buQ;[{f[ibdF[ebGcp=buQ;I@22CvE;GsP;=F28Hp>e@>sp;=pDBWFBlP;=iv6=ivO{@7=Flj4;=i?i@5HfOdivv;Ij5;f<lf5=i@24;[xR?v>jo3=F6;=i@2BWuf<k@8;=vj=i@2Buf<k@8;;GL<{f<lpo>zbD5MjBhv?kjo4;[gv>cvBlz@8=i@24;=L[J>bD=iV;[uf<k@8Iv6Ijo4;Hfo3=i@24;j<hfoBxR?j>sjoN@;[u@8=fuQ6=F7=ivv5;[jBepl?kjN{P4;[b<szvv>n?sJ?izbD3=f<v>k@OpIvvB{f<e@3;[xbD=i@24=fuQNufj>sX;Ub>sbMpo3;Cp=FBePCf3;[ub;z@>{P>i@5=@5CpOz@BjuQ;Hz@4=p?ub<hp<lfo9[{pl?hV=pD3;=@Bnz@>dF[f4;[zvv7HpoNjBnz@7;;J[ebGsjlj=F4;zR?{f;J4;jo;[upl?np<tf=po;[zbD=FK?sjC@;JKbGnJ?h@;=F3=FoBkvBkj7;[pHpNgv>cvBlz@8IV;J4=Fo;;mUvBkj8MT>kE=FS?sj>FBzbD=FK?sjC@;JKP;[upl?cWebGkj;[zvvBL<hb<sjlj;CT5=L[v>k@6HvV=i?cJ?D4;=@6Kfo>lT6=i@5C@9;fS?u@>cz@;[xR?FOpoBnj5;CpNepD4=L>divv;[xR?cvBuTBnz@6;[xR?kG@4=F24;[Jl?sz@>{f[u@>cJ?D4=i@5Ip;=L>hv>hb<nT4;;mIGF4=f=po;;zvv=b<nb>kj4;MJ?xbS?kpMfuQ;[jdF=P=iv=i@2BD4;@;Cj21;zv?k@27[j6;[p;jl?lfj>divv;=vj>ePCp?nz@>lp?div?f<tfuQ;[ebGebBsb;jOxbuQ;;m;bMv>cbCbUbuQ>ufj>c>UX=fuQ4=ib7Hv6Kp>cBUfGs?sGibdF>sbBcb3;mCbuQ5Kb5Ib>zb>c3=WebBlfjBuYzbBcBbKb5CbuQNufX;m=b<nzbD=b<cpS?ebBzbBc2[uT5MfGub>c2[poOc2UX=fuQB{fGcX=fuQB{fGc2UX=fuQ4=ib7;m=b<cpuQ>lfjBufX=ib8Cb3;m;j>kjCp?divv;=fuQ=F6=iv21[jOebGkj4=Fo8[e@4;[i@8[ePCp?nz@>jdF=P=iv=i@24;UJ?DBlP>kpIvBb<po7KbD;MT>kE=FS?sX;zR?lfo4;T4=F21;J4;jo;[v>cJ?D4=ib;[@>u@NjdF=FoBj>FBcz@;j<k@26=i@22I@7=@7=p4;[xR?kjlj;[xR?zbD;[xR?nv>divE=vj4;Iv7[jdF[izbD>ibdF[ifo5;[J[FBgvD>kjlj;=L>v>cJ?D4;=FuQBlP3=i@5MfuQ;zR?E=L>hE;=F:=Fo4;fo>kv8CP>upD;J[{f;Mv>cz@;[fo6;fo4;Mz@6Ivv6=F8Hp5;=i@2BF4=fCP;[upl?gv>uP>ufo3;P3=F:UWeP4;[{fCp>nT>kE=FS?sX;;zR?E;T4=F21;J4;jo;[WFBzbD=FK?sjC@;JKP=F:=FoBjoBkvv7;Cv>hJ?D9[z@5=ib;I@26Ij7=F6Iv7;MpuQBsz@>iP>n@5;;mUvBkj8MT>kE=FS?sX;zR?v>k@7=Fo5;;T4=F21;J4;j<upl?np<zbD=FK?sjC@;JKP;[@3=i@7[u@>hbD=L>v>nJ?hp?np<j6Iv8Ij7;=Fo9=ibD5=F29MpD3;=@7=p4=i@22I@7;[j5=LC@6Hf6;=i@29C@Oe?l@6;=b=i?hj>sbD;Cv9[z@5Hz@B{@>p=F6CJ?ufo7;zR?kj5=L5;zR?lz@9;j<Ap5;[jdF=FoBkvBkj7[dL?np<hp>hj4;[WFBi@=F[@3=iv5Cv9[z@5;[jdF=P=L>E;=F9=F<Aj8HV=FuQBlP3=f>J;MpuQBsz@>c@=i@:;;J[{fUf<n@3;=LUvS?hp6;fo3;=L>hv>hb<nT4;P3=F:UWeP4;;m;j>kGnT>kE=FS?sj>ep?kX;[izR?cvS?hpo3;=f=p<hYu@5=fj>W{@>L?ufo>kGj5=iv6=ivOi@>cfo;Kz@3=LI@7=FoN{fo;TBkX;[{fo;J4;j<u@3;[upl?np<tf=po;[zbD=FK?sjC@;JKbGnJ?h@;;P3=F:=vjNdiv?zbDNjNcvS?nz@;HR?hp9Hp3;j5;=f=po;zR?p=F6Cz@;IvBkj7[epD5Iv8[xR?cvBj>ub3;[f<tfS?lP4=F28;;zR?kj5=L5;;zR?lz@9;j<Ap5;Cv>hz@=p<kvv7;[j5=iv6=iv6CfBl@Oe?l@6MbS?l@6=i@29C@6CfBnT7[z@6KbD3;UT>lP9;Hj>sbD;;Gj>D9[z@Nj5Hp4=Flj4=P8;=b;@Bk@28=F8;=@8=ib9I@7=L4;[gv8=fuQ>l@:[{b;;Gz@>b<Ap4;;m;j>kj=F7[ebGuf<@;[JHp>lfo9[{pD;Czv?J>n?sz@;[izbD3=f<uf<Av;CP>lfj5Hp3=L3;Cv9[z@5=iv8Hp6=f=po;zbD=F6CJ?i@5KvBhz@3=F8=L4;[E;@>kvBkj7[jNF4=f=po;[zbD=FK?sjC@;JKbGL<hb<l?epl?lzv?np<nJ?h@;[u@NdFB{f=L4;M?cvB@4=F24;[zbDNcvBgv>X=L[R?lj7=FoOebuQBhp3=i@26Cf6;=fuQ>jOebuQ4=ibHfo>upD;J[{f;=F<AjoBb<sbD;;mUvS?h@6MT>kE=FS?sX;;J[{f;J[{f;;J;J3=L3=fS?nT>kE=FS?sX;;zR?v>k@7=Fo5;[{fo;TBkX;[{fo;J4;j<u@>Jl?D9[z@NF4;=f=p<zbD=FK?sjC@;JKP=iY@3=foN{@BszvE;[FBcvS?hz@B{@3;[gv8=i@22I@7[{b;;Gb<Ap4=F8;=T5=iv6=iv6Cf4=i@29=iv6=iv6C@6;[j5=iv6=ivOe@NcT3;=i@9Hp<hp3=L4;=FdF;jdF=FdF[zbIvBibdFUv<tP9CP8;Ijlj=i@22I@7Ijlj=@7[JD>l@6CfuQ6;[dibD=Fo:I@7[j:;[@3=i@2Bnv>D:IpD3=FoBn?ep>hP=Fo4;[WjdF=bGv>k@6;CGsj>zbDBb<sbD;Ij9[F>lj6=ib4;[ifjBu@3=F8=FoBD7KR?lb9=T6;[v;z@BcvS?{@>cvB@3;fo>F4;;JKbGL<hb<l?epD;[epD5Iv8=F6Cz@;=FNzvj>hp>hjBf<tfS?lP4=F28[{vj=L>sR?hT;[jdF=PCP3=vj6;Hv>di@Bkv6;[upl?di@Bkv6;Hv>gv9;z@>upl?gv9;z@3;Hv>lT7[j22;[upl?lT7[j22;HE;T4;J4;[upD;T4;J4;zR?cvBE;jo;CpuQ>upl?R?nV;Cfo4=L[bD=@;[xR?lf7[di@5KP=ivvBxR?pIvv=L4;[izbD>lf7=ivS?hfo5;=F6;jo;zR?j5;=i?nz@5=F9HV;Cv>hJ?D9[z@NF4=f=p<zbD=FK?sjC@;JKP=ib;[R?nvBbD=@;=L[gv>ljS?k@29;CP3=FuQBpo8MpSE;[gE;@>j>hfo6;[xR?E=vjBlb:[u@9[epDBlfo:Cfo21;[R?{@8=FIX;Cp7K@Nzvv8[F7;[epDBkbBR?lbuQ6Hp:Cv21[zvv9[fo7MpoBn@Ou@>gv:;;zbD;@3=F3=Fo4;[pD;fo>FBcvS?D>hJ?D9[z@5;[jdF=bGgv:[j21;CP>upl?hfBebuQ;;zR?ub>lpD=Fo7I@2:;[u@:[{pDBiT>sT;[pD;f<D>hz@;[F4;JKP=ib;[zbD5CP>hfBebuQ;;mUvBkj8MT>kE=FS?sX;;zR?v>k@7=Fo4;[{fo;TBkX;[{fo;J4;j<u@3;;P3=F>kjoBhz@4;[gv>kjOJ>uf<zvGu@NjdF=Fo4;CjBcvS?i@=@9;IvBkj7Cj<lP8;;zR?hpBlP8;IvvBlP8Up=buQ=F7[izbD>lP8;UjuQ=vv;jBizbD>hpBkvvBlP8;UjuQ=vv;j6HpBizbD>lP8[p=L>kvBdivv;[xR?v>lj>cT;[gv:[eYbD=iV;;zbD;@3=fo4;fo3;[FBcvS?nJ?h@;Cv>hJ?D9[z@5=ib;[FuQBk@27[gv>kV;=b<bD=iV=i@24;[xR?E;J4;jo;KjoBu@5=T7Ij;IvBpHpl?D4;;zbD;@3=F3=Fo4;=i@2:MJ?sP4=T6Cv>hJ?D9[z@NF4;JKP=ib;=i?DBlP>kp;=L3=i@24=F8IX;=F<cv<hV=pD3;Hz@4=FljBub<A@7;Cfo4=ibCTBlj6;Kj>lpo3=@Bnz@3;[b<po7=i@:Uz@;M?v>F;jo;[ebuQBhp3=i@26Cf6;;m;j7Ij=f=p<h@Ob;T>hpo3;;JHb=i@2:[z@7[F4=f=p<zbD=FK?sjC@;JKP=L>v>l?epD;=FO{f=LUvS?kjo7Ijo5Hz@3=L4;;T>lb21HfBsz@6;;J>X=FoNgE;[b;T>izR?hpo3;[ebGepD=f=po;HYp;JKP=L3=fS?lP:Cz@;[gE=i@2BhjNxbD3;=L>j5=ibCb7;[jdF=P;JKP=F<hp7[j8H@>n?gE=i@22I@7;=f=po;=F6;jdFHbuQ>sjo5Cb21Kz@>ebKbD4;Mz@5C@21=TBp?lb21=F22Cz@:[e@4;=LUvuQ=L>hpo>n?v>j7[zb3;=f=po;[E=L=iv=i@24=Fo5Cpo>gv>hV;Mp<tfuQ=LUvS?kjo7Ijo5Hz@3=L4;=Y{f=FNzvX;[v<lb7[uT6;fo>zbD=FK?sjC@;JKbGjdFUvS?nJ?h@;Uf<hzR?J4=L>l?epD=i@>sX;[zvV=FOgE=Fo5;[ifo6=i@2BF8U@BFBWdi@Bzb;=FuQ7[ebGsj>sbD;[eb=L[bD=ivBsvBufo>n?hvv;UvS?h@Ob;T3;[{f=L[v>k@6;;zR?np<tf=p<zbD=FK?sjC@;JKbGnJ?h@;=F3=FoBkvBkj7;[gE=i@2BhjNxbD3;[eYbD=iV=ibM?v>{f=L4;[b;T3;=FO{f=LUvS?kjo7Ijo5=L>hz@3;;T>lb21=Fo5Hf4;;J>lpo;@>kvBu@NdF4;CP>{f;JKbGjBsjlj;[b;T3;[jdF=P=i@21Mp<epD>hbD;Czv?njBu@21Ij4=LUp=bS?u@3;CP3=FuQBgE;@3;JIjuQ=Fo5Hf4;[zvGkWjdF=i@24=L>lfGcp=buQ;[b;T3;;j<Ajo;T>upl?p=b<i@N[divv=Fo5Hz@=p<kvv7[zbD5;T>lb21[upD;[upl?np<tf=p<zbD=FK?sjC@;JKbGnJ?hp?cV;T>W{f;[b;T3;[FBzbD=FK?sjC@;JKP;M?sJ?cp=bS?hz@3;M?sJ?{f<hz@Oi@>cfo;M?sJ?l@>ebGhT;Hb;zR?jdFC@7;;zR?jdFC@7[J3;;jC@3=fuQ=ibC@7Cb21=pl?kjo4;[FBcvS?hz@>hT;[{f<hz@Oi@>cfo;M?v>kjoBzb3;;m;j>kj=i?divv;[v>jdFUp=bS?nbCb3=buQ;MJ?xbS?DNebuQ=pDBkvv>{bCj;[if<eb<jdFCfo;[v=FuQ>diR?kj4;CJl?D?hbuQ=i@;;GizR?cvS?hpo3;[ebGepD=f=po;[{@>L?ufo>kj;[E=L=iv=i@24;[X=iv6=iv6Hfo6=F8=L>lpo7[zbD7;[di@BcJ?svX=@6;[gE;@>po5Ijlj;C@22=Fo21CT6=@:;Cfo4=L[i@>T3;=F24=p?hfoN{fo4;[gvOcp3=Fo>{pl?i@9[zvvNdF4=Flj>ufjBlzvv>j;z@;;f<FBkj5=F<hbO{PBL<Ap4;CfoBfo8Mb3=F22[j<hp3=Fo6=FlX=F>v7[fo8Mb3;[L?@=F8[{fo4;;f<AWv>k@6;[v>hv=i@24=Fo6;[{vGhp3=L3=b;zR?{P6;zR?gvl?lP>hV=L5=F8;IjoBkj7Iv9[J[fo8Mb>L?@;;j>kGFB@;=vj7Mpo6Hp3;j<lfj6=T8=L3=Y{vGhp>{POgvD;j=L>eT3=F8;IGFBcz@;jo;=Fo>{pl?dF4=FlX;;zbD;@>j>FBljBf6=f=p<zbD=FK?sjC@;JKP;=i@6=L=iv=@9[ufo>epD5=F6Cz@;;fo5=FdF=@21=F8;fo5;Cfo:Hp4=FljB{pD5Mz@6=FoOcT3;[xR?v>{f=LBF4=Flj>upl?hfo3;;J[{PBnvBdiv?nz@>sz@6Ij5Cfo4;[xR?lz@=FdF;jdF;[xbD;jBkvvBjdF;jdF;[xbD=b<kvvBhp4;jdF[xbD=F7IvvBD6;jdF[F4=Flj>hfo>kj;;JIvv>nvBhbD;CP>kjNpl?dF4;[{f<gv>{f<h@3=L>upl?lbNi@6;[zvvBkj5=i@2>lfoBh@>lbNi@6Cp3;;P3=F>nz@6;T>zbDNgv>{@9=b=L[bD=F8H@3;[{fCp>k@7=Fo5;[{fo;TBkj>{fo;J4;j<u@>lP>@>kvBkj7[zbD=FK?sjC@;JKbGnJ?h@;[{vGsjlj=L3;@3;Cv>hJ?D9[z@5;;m;j>kGb;T>npo6CvNebS?cp=bS?xbuQ;[{fo;TBkX;[@>v<lb7Cv>hJ?D9[z@5;[F4=f=po;[zbD=FK?sjC@;JKP;[{pD5Mz@OcT>u@22UvBv<lb7[{@9;CvNebS?cp=bS?hpo3;[ebGepD;;zR?v>cz@;j<Jl?ebS?cJ?D4;[u@Nj>hp3;jo;=FdF;jdF=FdF[zb;IvBkj7[ibdFUv<tP9CP8;[@>jNpo5IjljCzv?J3=F9HV;[{vGsjlj=L>cfo4;Cv9[z@NcjuQ=vv=@9;[divvBzbKpl?kGsPNiPBhz@>e@3;Cv9[z@NF4=f=p<zbD=FK?sjC@;JKP;[epD5Iv8=F6Cz@=F7IvvBDOifo4;;fo5=F7IvvBDOu@22;[{@BF4;JKbGhz@B{@3=FdFCv8;[jdF[jdF[{@>{foBlbD>dF3=FdF[u@22;[jdF[jdF[u@22KJ?eP;J=ib:Kjo5;;P3=F3=F7IvvBD6;jdF;Cp?nz@>gv>{fS?{@Bhp4=Flj4=P8UT>di@4=F7IvvBD6CfuQ7=iv9;[@>i@8[{@7Kvj=iv=i@24=F3=F7IvvBD6;Cb21[upl?lbBup3;Cj22[zbD7=F8;T3;[gv>X=L[@4;[R?lj7=L>kj7;;mUvBkj8[b;T3;;zbD=fuQNufj>sX;CT8[di@Op?u@3;=P:;T>lGkj;=L>j23;j<Av=FuQNzbD8;T3;[ub>lpD=Fo7[FuQ;T3;Ij5CbGiTBhzbD4;T3;=i@31=ivl?ifo7Cf7;T3;;jdFHbuQ>cb=LD;T3;[FIGgv?v8;T3;CbBkG[gv?v8;T3;[F4=fuQNufj>sX;CT8[di@Op?u@3;;j>kG@>WjdF=bGv>k@6;CGkj9[F3=Fo4;=ib21=LCfGifj;[fO{fo4=L3=fuQ;Cv9[z@5=F8[i@;Cv9[z@NF4=f=po;[zbD=FK?sjC@;JKP;[zvV=FO{f<lpo>lzv?F4;JKbGL<hb<sjljCp3;Kz@>hp>lpl?lP;=pDNupl?b<po7;[gv?v8Iv<kjCpDBlb22I@2>kvD;[jdF=bGv>k@6;M?cJ?lTBsbD;[pHp>lpl?divv;M?v>c@ObD;[zbD=ib22[u@3=Fo6;p?v>k@6=ib;[jdF=bGbD=p?lP3=pDNpo7MpSE;;j=fuQNufj>sX;CT8[di@Op?u@3;Iv6Mz@6=FljBsjlj;M?cJ?kjN{P4;CP>upl?{@OzbD4;[b;T3;;zR?ufj>l@23;[F9=iv22;=L6Cvo;[p?kX;[ebGkjo;[gv21=@;[div?hvE;=P8;J4;[izbD>lT7;Kfj=L7;[j>cz@=L>DBlzv?J>zbD7;T3;[zbDN@>{@BszvE;Hp4=Flj4=FoOcT3;;foNu@22[{pD5Mz@3;[i@8=L=i@2Bnz@6;=TN{@7=FljBlf4;=i@29=i?nJ?l@6;UJ?upl?kWzv;=iv;T>hfBebuQ;;m;j>kGb;T3;Mpo6CvNebS?cp=bS?hpo3;[{fo;TBkX;[v<lb7[Gkjo4=F8Mz@6;;jCb21[{@OzbD4;CvNebS?cp=bS?hpo3;[ebGepD;;J>lP21[gv>npo;JKP=fuQ;[v>DO@4=F2BkY{fCp>lb<{@B{pD5Mz@OcT>u@22;=iv5=L[gvl?epD;[j5=ivNgvl?lp3;IjoBhp>kv6Mz@6;[gv>lJ?DBhfo6;[b;T>npo6Hpo3;CvO@Bv<lb7;CvNebS?cp=bS?hpo3;[E=L[v>k@6;[upl?cz@=vjCz@21;;f<n?j9[zbD;Czv?lT9Uz@=ib;=fuQ>cvBhvvBj9;IvBjNF[zbD;IjS?gv>@3=F24;;Gcf<@4=F24;[v5=Fo5=fCfo>kbMb>hfNe@>z@8CfuQ8=F8=F;M@7=fS?lb2>gvD;Uf<A@2Blz@22[e@4;=FoBgv>kj5=i@7;Upl?npo6MzbD>lb23;=fuQ4=iv6=iv6=iv=i@24;Hf4=@22=Fo6Mz@3;Cp8=LM@8Kz@8;=i@6CpS?gvl?zvv:;[Jl?lj2>fo6;fo4;IvvOgE;@>upD;HvNdF5Mfj>xbD3;=Fo5IYu@2>lfo4;=vj6Kz@>@4=F24;;zv?pIjBhpD>n?E=ivS?lp9;[{fMz@=L8[@4;j4=iY@BFOp?i@;=F8=L>divv5KjD;=b<AYef<sz@9;Cj2Blf8[uT7[jo5=F2:=iv23;[i@8[juQ>n?ep4;[@Bj>F;jo;[ebuQBhp3=i@26Cf6;=F7=iY@Bj>lb:Upo4;Hp4=iY@BX=vjBeflj;KpD=iY@BX=iv6=ivOR?kvv8=L>lT:;=FdF=iY@Beb=TBhP3;[ibdF=iY@Bj>epDBzbD;[poBu@24=iv21=p;Cj=F26Cj7[u@3;=F8=L>div?hP;Cv6=ibCj5CbuQ=L>lpo7;[gv>upl?po5Ijlj;;Gcf<@4=F24;[{f[X;JKP;KzbD=fS?@4=F2BE=F6Cv6=iv6;Hp>J>cvBE;M?sz@=L[@4;;T>lb21HV=fuQ;;mUvBkj8[b;T3;[FBfo8Mb>@=iv22Kz@:;=fCfo>nz@=ibD6=F8Cj25;;zbD=L[v>k@6;[gv>l@2BhpBhzbD4;[ibIpD=b<i@5;[f7Cv<kj<i@;Cj>p=FoNxbD3;[fo8Mb>L?@;[{vG{P6Cz@21Ivv7;C@25;GcbuQ4=F8;[{fCp>hbCpo;Cb<AWv>k@6;;foNu@22[{@9UT3;[i@8=i@24=ivNgvD;Kz@>epBDBzbD7[gE=@24=iv;T3;;m;j>kj=i?divv;[v>kvV;jBzbD=ib22[eP=i@32;H?{PBf8[{b3;=L>j23;mHvv>cjBsYeP=i@32UBcbSE=fuQ7KYeP=i@32UBnfj>lj26KYeP=i@32;m[b<ufj5KYeP=i@32UBb4;j8KYeP=i@32U4=T9[ufj5KYeP=i@32;m[jo>ubuQ>sYeP=i@32UBib>j2BsYeP=i@32UBnbCp7KYeP=i@32;m=Fo22[ubuQ>sYeP=i@32U4=i@3>upBsYeP=i@32UBcjBhzbKYeP=i@32;m=F6IvV;j4;[zbD=ib22[eP=i@32;[jdF[jdFCbD>E;=FdF=f<zbD=ib22;[jNj>lfo9[{pD;[e@6IjCJ=i@21;[izR?cvS?hpo3;=f=po;HYu@>lp<Ab;M@>cvS?jBsjlj;[upl?np<tf=po;[zbD=FK?sjC@;JKbGnJ?h@;[gv>cvBlz@8[E;[bD=iV=F8[gv:;HYu@3=p?sjuQ;CP>e@OjdF=Fo4;P3=F>kjoBhz@4;CjBcvS?i@=@9=fj>u@5Cb2Bgv7;[jdF=bGv>k@6;[X=bHjBsX;z@>zbDBb<sR?{vGpCb7[u@3;=poBk@Blpl?zvv21;Cvv>lT21Kj<divv;;zR?v>svBgv5=F6Cz@;[xR?cvBkvBkj7;[zbD=FK?sjC@;JKbGnJ?h@;Cv>hJ?D9[z@5=ib;HYu@>lfo9[{pD;[fj>hpO{f;jo;CP3=F22HfBebuQ;[jdF=PCV;T3;=L[v>hb<hE=FuQBsz@>nTB{pD3;[xR?E=FuQNzbD7Hv>epBebuQ=ib;[zbDN@>epD5Iv8=F6Cz@;[j5Hp4=FljBsv6;CfuQ9HbMJ?kj:;[upD;JHb<j6;;f<hp5HfBlfuQ9;;m;j>kj=f=po;=T3=L[zbD=ib22[eP=i@32Hpo3;[{f<{bG{f<{bGebGzbD=ib22=i@32;;J>u@3;fo>i@6;=f=po;[zbD=FK?sjC@;JKbGpo9[epD=ib;I@2O@3;J[{f;Kj>zbDBb<sbD;[jdF=bGv>k@6;;m;j>kGb;T3;[izR?cvS?hpo3;=f=po;[u@5Cb7Mz@=FOL?npo3;HYu@>v<lb7Uv5Ij7;UvS?h@Ob;T3;=FOL?npo>nz@;=fS?zbD=FK?sjC@;JKbGL<hb<l?epD;[zbD5Mz@=fS?kvV;j4=Fo6=i@32;;z@>zbDBv>k@6;CfuQ9Hb<Ajo6=iv21;[zbD5MJ?cbS?kWjdF=bGh@3=i@4;[@3;J[{fIj7IGcbCbUpo;=fS?{fHp7[j6;=LUp=bS?nbCb3=buQ;Czv?eP=i@21Mpo;Cpl?p?ebGkjo;Ub>sbMpo3;Cp=F4;[uf<szv?zbD=ib22Cfo22[ubuQ>cbD;[b=?sb6;CfjBsWeb5;Cjo3;b>sb6;MR?lp8Kb6Cb;;j<F;j<u@3;[jdF=bGeP=iv;Mp<cvuQ=L3=fuQ;CP>ePCTBlj6;=Fo5IvBcv5Hz@3;;m;m[zbD=FK?sjC@;JKbGL<hb<l?epl?lJ?c2Ivv6;m;m;mU2[f9C@Bnpo5;m;mHb<j5=F6C?epl?c>gv22Czv?WjdF=P;mHYu@>J=iv=i@2Bc>lP>hv7I@2>cvS?e@3;m;m;m[";
-flagText = true;
+	keyletter = "ZnnZZs2ZuZoush3ZZkkuu2hiiZZgZjyoZrhoZm4Z5ZaisuaktsanZbu3oZi2aZ";
+	/* decompress */
+	let letter;
+	const keyletters = keyletter.match(/.{2}/g);
+	let count = 0x3a;
+	const pairs = [ ];
+	for(letter of keyletters) {
+		pairs[String.fromCharCode(count++)] = letter;
+	}
+	console.log("pairs");
+	console.log(pairs);
+	let comp = "";
+	for(letter of comp2) {
+		comp += String.fromCharCode(letter.charCodeAt(0)-1);
+	}
+	console.log("comp");
+	console.log(comp);
+	let sre,re;
+	let decomp = comp;
+	let nnn=0;
+	for(key in pairs) {
+		if(++nnn>100) break;
+		sre = key.replace(/([\[\]\(\)+,.\\?])/g,'\\$1');
+		console.log(nnn,"    ",sre);
+		re = new RegExp(sre,"g");
+		console.log(pairs[key]);
+		decomp = decomp.replace(re,pairs[key]);
+	}
+	decomp = decomp.replace(/Z/g,' ');
+	console.log("decomp");
+	console.log(decomp);
 })();
+
+};
+</script>
+</head><body><div id="result"></div></body></html>
