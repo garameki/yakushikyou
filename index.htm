@@ -13,20 +13,9 @@ img {
 	width:20px;
 }
 </style>
-<script type="application/javascript" src="ruby.js"></script>
-<script type="application/javascript" src="text.js"></script>
-<script type="application/javascript" src="key.js"></script>
-
-<!--
-<script type="application/javascript" src="ruby.js.original"></script>
-<script type="application/javascript" src="text.js.original"></script>
-<script type="application/javascript">flagKey = true;</script>
--->
-<!--
 <script type="application/javascript" src="http://garameki.com/articles/yakushikyou/ruby.js"></script>
 <script type="application/javascript" src="http://garameki.com/articles/yakushikyou/text.js"></script>
 <script type="application/javascript" src="http://garameki.com/articles/yakushikyou/key.js"></script>
--->
 <script type="application/javascript">
 	/* 出典　來馬琢道　著　禅門曹洞宗典　大正八年七月初刊　版 */
 	/* 著作権 国立国会図書館デジタルコレクション Copyright © 2011 National Diet Library. All Rights Reserved. */
@@ -44,7 +33,6 @@ let ddd=function(eee,ggg,hhh){let ccc=ggg.split("");for(let letter of ccc){re=ne
 	const reNUM = /\d+/;
 	let counterRuby = 0;
 	let rubies = ruby.split(/\s/);
-	console.log(rubies.length);
 	let letters = [ ];
 	for(letter of letternames) {
 		if(letter == "n") {
@@ -58,7 +46,6 @@ let ddd=function(eee,ggg,hhh){let ccc=ggg.split("");for(let letter of ccc){re=ne
 			for(let ii = 0;ii < num;ii++) {
 					letters += '<img src="fonts/sp.png">';
 			}
-			console.log(num);
 		} else {
 			if(counterRuby < rubies.length) {
 				letters += '<ruby><img src="fonts/' + letter + '.png"><rt>' + rubies[counterRuby] + '</rt></ruby>';;
@@ -80,7 +67,6 @@ onload = function() {
 			clearInterval(hoge);
 			start();
 		} else {
-			console.log(count);
 			if(++count > 10) clearInterval(hoge);
 		}
 	},200);
