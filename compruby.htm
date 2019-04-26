@@ -1,0 +1,186 @@
+<!DOCTYPE html><html lang="ja"><head>
+<meta charset="utf-8">
+<script type='application/javascript' src="ruby.js.original"></script>
+<script type='application/javascript'>
+const compressPair = function(sOrigin,nStart,nLength) {
+
+	let comp = sOrigin.replace(/\s/g,"Y");
+	const comps = comp.match(/.{2}/g);
+	const pairs = [ ];
+	for(let letter of comps) {
+		if(pairs[letter]) {
+			pairs[letter]++;
+		} else {
+			pairs[letter] = 1;
+		}
+	}
+	const aa = [ ];
+	const bb = [ ];
+	for(let key in pairs) {
+		aa.push(key);
+		bb.push(pairs[key]);
+	}
+	/* sort */
+	let dumm;
+	const len = aa.length;
+	for(let ii=0;ii < len-1;ii++) {
+		for(let kk=ii+1;kk < len;kk++) {
+			if(bb[ii] < bb[kk]) {
+				dumm = aa[ii];
+				aa[ii] = aa[kk];
+				aa[kk] = dumm;
+				dumm = bb[ii];
+				bb[ii] = bb[kk];
+				bb[kk] = dumm;
+			}
+		}
+	}
+	//console.log("aa,bb");
+	//for(let ii=0;ii<aa.length;ii++)console.log(aa[ii],bb[ii]);
+	let sre,re;
+	count = nStart;
+	for(let ii=0;ii<nLength;ii++) {
+		sre = aa[ii].replace(/([\[\]\(\),.+*])/g,'\\$1');
+		//sre = aa[ii];
+		//console.log(sre);
+		re = new RegExp(sre,"g");
+		comp = comp.replace(re,String.fromCharCode(count++));
+	}
+	keyletter = "";
+	for(let ii=0;ii<nLength;ii++) {
+		keyletter += aa[ii];
+	}
+	const ret = { };
+	ret.text = comp;
+	ret.key = keyletter;
+	return ret;
+
+};
+
+
+const compressUni = function(sOrigin,nStart,nLength) {
+
+	const pairs = [ ];
+	for(let letter of sOrigin) {
+		if(pairs[letter]) {
+			pairs[letter]++;
+		} else {
+			if(letter.charCodeAt(0) > 256) {
+				pairs[letter] = 1;
+			}
+		}
+	}
+	const aa = [ ];
+	const bb = [ ];
+	for(let key in pairs) {
+		aa.push(key);
+		bb.push(pairs[key]);
+	}
+	for(let ii=0,len = aa.length,dummy;ii<len-1;ii++) {
+		for(let kk=ii;kk<len;kk++) {
+			if(bb[ii]<bb[kk]) {
+				dummy = aa[ii];
+				aa[ii] = aa[kk];
+				aa[kk] = dummy;
+				dummy = bb[ii];
+				bb[ii] = bb[kk];
+				bb[kk] = dummy;
+			}
+		}
+	}
+	let re,sre;
+	let count = nStart;
+	let comp = sOrigin;
+	for(let ii=0;ii<nLength;ii++) {
+		re = new RegExp(aa[ii],"g");
+		comp = comp.replace(re,String.fromCharCode(count++));
+	}
+	keyletter = "";
+	for(let ii=0;ii<nLength;ii++) {
+		keyletter += aa[ii];
+	}
+
+	console.log("length = ",comp.length);
+	const ret = { };
+	ret.text = comp;
+	ret.key = keyletter;
+	return ret;
+	
+
+};
+
+let decompUni = function(sComp,sKey,nStart) {
+
+	let keys = sKey.split("");
+	for(let letter of keys) {
+		re = new RegExp(String.fromCharCode(nStart++),"g");
+		sComp = sComp.replace(re,letter);
+	}
+	return sComp;
+};
+
+let decompPair = function(sComp,sKey,nStart) {
+
+	let keys = sKey.match(/.{2}/g);
+	for(let letter of keys) {
+		re= new RegExp(String.fromCharCode(nStart++),"g");
+		sComp = sComp.replace(re,letter);
+	}
+	return sComp;
+}
+
+onload = function() {
+
+(function() {
+	/* 
+		**global variable**
+			ruby
+	*/
+
+	console.log("RUBY ORIGINAL");
+	console.log(ruby);
+
+	let ans1 = compressPair(ruby,0x30,9); /* 0-8 */
+	let ans2 = compressPair(ans1.text,0x41,24); /* A-X */
+	let ans3 = compressUni(ans2.text,0x61,25); /* a-y */
+
+	comp3 = ""; /* g */
+	for(let letter of ans3.text) {
+		comp3 += String.fromCharCode(letter.charCodeAt(0)+1);
+	}
+	console.log("comp3");
+	console.log("@@@key1@@@"+ans1.key+"@@@");
+	console.log("@@@key2@@@"+ans2.key+"@@@");
+	console.log("@@@key3@@@"+ans3.key+"@@@");
+	console.log(comp3);
+
+	key3 = ans3.key;
+	key2 = ans2.key;
+	key1 = ans1.key;
+})();
+
+(function() {
+	/*
+		**global variables**
+		IN
+			comp3 	c.f. comp2 which is used in compressed text
+			key1,key2,key3
+		OUT
+			ruby
+	*/
+	let comp = "";
+	for(let ii in comp3) comp += String.fromCharCode(comp3.charCodeAt(ii)-1);
+	ruby = decompPair(decompPair(decompUni(comp,key3,0x61),key2,0x41),key1,0x30).replace(/Y/g," ");
+
+//	ruby = decompUni(comp,key3,0x61);
+//	ruby = decompPair(ruby,key2,0x41);
+//	ruby = decompPair(ruby,key1,0x30);
+//	ruby = ruby.replace(/Y/g," ");
+	console.log("OUT");
+	console.log(ruby);
+})();
+
+
+};
+</script>
+</head><body><div id="result"></div></body></html>

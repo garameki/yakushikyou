@@ -13,60 +13,31 @@ img {
 	width:20px;
 }
 </style>
+<script type="application/javascript" src="ruby.js"></script>
+<script type="application/javascript" src="text.js"></script>
+<script type="application/javascript" src="key.js"></script>
+
+<!--
+<script type="application/javascript" src="ruby.js.original"></script>
+<script type="application/javascript" src="text.js.original"></script>
+<script type="application/javascript">flagKey = true;</script>
+-->
+<!--
 <script type="application/javascript" src="http://garameki.com/articles/yakushikyou/ruby.js"></script>
 <script type="application/javascript" src="http://garameki.com/articles/yakushikyou/text.js"></script>
 <script type="application/javascript" src="http://garameki.com/articles/yakushikyou/key.js"></script>
+-->
 <script type="application/javascript">
-const start = function() {
-
-
-
-
 	/* 出典　來馬琢道　著　禅門曹洞宗典　大正八年七月初刊　版 */
 	/* 著作権 国立国会図書館デジタルコレクション Copyright © 2011 National Diet Library. All Rights Reserved. */
 	/* インターネット公開（保護期間満了）Reserved period has been passed yet. */
 	/* LINK http://dl.ndl.go.jp/info:ndljp/pid/961952 */
 	
+let ddd=function(eee,ggg,hhh){let ccc=ggg.split("");for(let letter of ccc){re=new RegExp(String.fromCharCode(hhh++),"g");eee=eee.replace(re,letter);}return eee;};let fff=function(eee,ggg,hhh){let ccc=ggg.match(/.{2}/g);for(let letter of ccc){re= new RegExp(String.fromCharCode(hhh++),"g");eee=eee.replace(re,letter);}return eee;};const start=function(){(function(){let letter;const rrr=keyletter.match(/.{2}/g);let count=0x3a;const pairs=[];for(letter of rrr)pairs[String.fromCharCode(count++)]=letter;let ttt="";for(letter of comp2)ttt+=String.fromCharCode(letter.charCodeAt(0)-1);let sre,re;let nnn=0;text=ttt;for(sss in pairs){if(++nnn>100) break;sre=sss.replace(/([\[\]\(\)+,.\\?])/g,'\\$1');re=new RegExp(sre,"g");text=text.replace(re,pairs[sss]);}text=text.replace(/Z/g,' ');})();(function(){let ttt="";for(let ii in comp3) ttt += String.fromCharCode(comp3.charCodeAt(ii)-1);ruby=fff(fff(ddd(ttt,key3,0x61),key2,0x41),key1,0x30).replace(/Y/g," ");})();
 
 
-	/* decompress */
-	/* 
-		***global variable***
-			keyletter
-			comp2
-	*/
-	let letter;
-	const keyletters = keyletter.match(/.{2}/g);
-	let count = 0x3a;
-	const pairs = [ ];
-	for(letter of keyletters) {
-		pairs[String.fromCharCode(count++)] = letter;
-	}
-	console.log("pairs");
-	console.log(pairs);
-	let comp = "";
-	for(letter of comp2) {
-		comp += String.fromCharCode(letter.charCodeAt(0)-1);
-	}
-	console.log("comp");
-	console.log(comp);
-	let sre,re;
-	let decomp = comp;
-	let nnn=0;
-	for(key in pairs) {
-		if(++nnn>100) break;
-		sre = key.replace(/([\[\]\(\)+,.\\?])/g,'\\$1');
-		console.log(nnn,"    ",sre);
-		re = new RegExp(sre,"g");
-		console.log(pairs[key]);
-		decomp = decomp.replace(re,pairs[key]);
-	}
-	decomp = decomp.replace(/Z/g,' ');
-	console.log("decomp");
-	console.log(decomp);
 
-
-	const letternames = decomp.split(" ");
+	const letternames = text.split(" ");
 
 	const id = document.getElementById('result');
 	const reBNUM = /b\d+/g;
@@ -105,8 +76,7 @@ onload = function() {
 	let flag1,flag2;
 	let count = 0;
 	const hoge = setInterval(function() {
-		//if(flagRuby && flagText && flagKey) {
-		if(flagRuby) {
+		if(flagRuby && flagText && flagKey) {
 			clearInterval(hoge);
 			start();
 		} else {

@@ -1,0 +1,114 @@
+<!DOCTYPE html><html><head>
+<script type='text/javascript' src="text.js.original"></script>
+<script type='text/javascript'>
+onload = function() {
+
+(function(){
+	console.log("IN text");
+	console.log(text);
+	let letter;
+	num = ""; /*global*/
+
+	let comp = text.replace(/\s/g,"Z");
+	console.log("IN comp");
+	console.log(comp);
+	const comps = comp.match(/.{2}/g);
+	const pai = [ ];
+	for(letter of comps) {
+		if(pai[letter]) {
+			pai[letter]++;
+		} else {
+			pai[letter] = 1;
+		}
+	}
+	console.log("IN pai");
+	console.log(pai);
+	const aa = [ ];
+	const bb = [ ];
+	for(let key in pai) {
+		aa.push(key);
+		bb.push(pai[key]);
+	}
+	/* sort */
+	let dumm;
+	const len = aa.length;
+	for(let ii=0;ii < len-1;ii++) {
+		for(let kk=ii+1;kk < len;kk++) {
+			if(bb[ii] < bb[kk]) {
+				dumm = aa[ii];
+				aa[ii] = aa[kk];
+				aa[kk] = dumm;
+				dumm = bb[ii];
+				bb[ii] = bb[kk];
+				bb[kk] = dumm;
+			}
+		}
+	}
+	//console.log("aa,bb");
+	//for(let ii=0;ii<aa.length;ii++)console.log(aa[ii],bb[ii]);
+	let sre,re;
+	count = 0x3a;
+	for(let ii=0;ii<31;ii++) {
+		sre = aa[ii].replace(/([\[\]\(\),.+*])/g,'\\$1');
+		//console.log(sre);
+		re = new RegExp(sre,"g");
+		comp = comp.replace(re,String.fromCharCode(count++));
+	}
+	console.log("IN comp");
+	console.log(comp);
+	comp2 = "";
+	for(letter of comp) {
+		comp2 += String.fromCharCode(letter.charCodeAt(0)+1);
+	}
+	console.log("IN comp2");
+	console.log(comp2);
+	keyletter = ""; /* global */
+	for(let ii=0;ii<31;ii++) {
+		keyletter += aa[ii];
+	}
+	console.log("IN keyletter");
+	console.log("@@@"+keyletter+"@@@");
+})();
+(function(){
+
+	/*
+		**global variables**
+		keyletter
+		comp2
+	*/
+
+	/* decompress */
+	let letter;
+	const keyletters = keyletter.match(/.{2}/g);
+	let count = 0x3a;
+	const pairs = [ ];
+	for(letter of keyletters) {
+		pairs[String.fromCharCode(count++)] = letter;
+	}
+	console.log("OUT pairs");
+	console.log(pairs);
+	let comp = "";
+	for(letter of comp2) {
+		comp += String.fromCharCode(letter.charCodeAt(0)-1);
+	}
+	console.log("OUT comp");
+	console.log(comp);
+	let sre,re;
+	let nnn=0;
+	text = comp;
+	for(key in pairs) {
+		if(++nnn>100) break;
+		sre = key.replace(/([\[\]\(\)+,.\\?])/g,'\\$1');
+		console.log(nnn,"    ",sre);
+		re = new RegExp(sre,"g");
+		console.log(pairs[key]);
+		text = text.replace(re,pairs[key]);
+	}
+	text = text.replace(/Z/g,' ');
+	console.log("OUT text");
+	console.log(text);
+})();
+
+};
+</script>
+</head><body><div id="result"></div></body></html>
