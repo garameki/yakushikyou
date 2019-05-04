@@ -1,7 +1,11 @@
 (function(){
-keyletter = "ZnnZZs2ZuZoush3ZZkkuu2hiiZZgZjZryohoZm4ZZbsu5Zaitsakanu3i2oZaZ";
-key1 = "うYんYYしくYいYやうYじつYYに";
-key2 = "や0よY0しく22よゆYふYやYYら0じや3い2Yだみや2Y2や0にわ11じ1しくわYりむYじや";
-key3 = "さきせかとちごゆぐぜぎみじそはにがりしひだこぼぶわ";
+keyletter = "ZnnZZs2ZuZoush3ZZku2kuhiiZZgZjZryohoZm4ZZbsutsai5Zakanu3i2oZaZ";
+//"ZnnZZs2ZuZoush3ZZkkuu2hiiZZgZjZryohoZm4ZZbsu5Zaitsakanu3i2oZaZ";
+key1 = "うYんYYしくYいYやうYじYによY";
+//"うYんYYしくYいYやうYじつYYに";
+key2 = "や0つY0しふYゆY0じや3YりやY282やYさ1しく22Yい2Yだ1じわ0YそちYぎやくわみや";
+//"や0よY0しく22よゆYふYやYYら0じや3い2Yだみや2Y2や0にわ11じ1しくわYりむYじや";
+key3 = "きせにからとわごゆぐぜぎじみむはさがいひだりこぼぶ";
+//"さきせかとちごゆぐぜぎみじそはにがりしひだこぼぶわ";
 flagKey = true;
 })();
