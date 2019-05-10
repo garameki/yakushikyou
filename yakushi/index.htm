@@ -19,6 +19,16 @@ img {
 <script type="application/javascript" src="ruby.js"></script>
 <script type="application/javascript" src="text.js"></script>
 <script type="application/javascript" src="key.js"></script>
+<!--
+<script type="application/javascript" src="ruby.js.original"></script>
+<script type="application/javascript" src="text.js.original"></script>
+<script type="application/javascript">flagKey = true;</script>
+-->
+<!--
+<script type="application/javascript" src="http://garameki.com/articles/yakushikyou/ruby.js"></script>
+<script type="application/javascript" src="http://garameki.com/articles/yakushikyou/text.js"></script>
+<script type="application/javascript" src="http://garameki.com/articles/yakushikyou/key.js"></script>
+-->
 <script type="application/javascript">
 	/* 出典　來馬琢道　著　禅門曹洞宗典　大正八年七月初刊　版 */
 	/* 著作権 国立国会図書館デジタルコレクション Copyright © 2011 National Diet Library. All Rights Reserved. */
@@ -28,7 +38,7 @@ img {
 let ddd=function(eee,ggg,hhh){let ccc=ggg.split("");for(let letter of ccc){re=new RegExp(String.fromCharCode(hhh++),"g");eee=eee.replace(re,letter);}return eee;};let fff=function(eee,ggg,hhh){let ccc=ggg.match(/.{2}/g);for(let letter of ccc){re= new RegExp(String.fromCharCode(hhh++),"g");eee=eee.replace(re,letter);}return eee;};
 const start=function(){
 (function(){let letter;const rrr=keyletter.match(/.{2}/g);let count=0x3a;const pairs=[];for(letter of rrr)pairs[String.fromCharCode(count++)]=letter;let ttt="";for(letter of comp2)ttt+=String.fromCharCode(letter.charCodeAt(0)-1);let sre,re;let nnn=0;text=ttt;for(sss in pairs){if(++nnn>100) break;sre=sss.replace(/([\[\]\(\)+,.\\?])/g,'\\$1');re=new RegExp(sre,"g");text=text.replace(re,pairs[sss]);}text=text.replace(/Z/g,' ');
-let uuu="";for(let ii in comp3) uuu += String.fromCharCode(comp3.charCodeAt(ii)-1);ruby=fff(fff(ddd(uuu,key3,0x61),key2,0x41),key1,0x30).replace(/Y/g," ");})();
+let uuu="";for(let ii in comp3) uuu += String.fromCharCode(comp3.charCodeAt(ii)-1);ruby=fff(fff(ddd(uuu,key3,0x61),key2,0x41),key1,0x30).replace(/Y/g," ");})();/*この行の最後の括弧をつけるとdecompressします*/
 
 
 
@@ -70,13 +80,15 @@ let uuu="";for(let ii in comp3) uuu += String.fromCharCode(comp3.charCodeAt(ii)-
 	id.innerHTML = letters;
 }
 let flagTomaru = true;
-const startScroll = function() {
+const startScroll = function(sIdOfTag) {
+	const id = document.getElementById(sIdOfTag);
 	let dd;
 	const hoge = setInterval(function() {
-
 		dd = 10;
 		if(flagTomaru) dd = 0;
 		window.scrollBy(-dd/2,0);
+		console.log(window.pageXOffset,id.clientWidth - window.innerWidth);
+		if(window.pageXOffset < -id.clientWidth + window.innerWidth) clearInterval(hoge);
 	},1500/2);
 };
 const prepareScroll = function() {
@@ -107,7 +119,7 @@ onload = function() {
 		if(flagRuby && flagText && flagKey) {
 			clearInterval(hoge);
 			start();
-			startScroll();
+			startScroll('content');
 			
 		}
 		if(++count > 10) { /* for error */
@@ -123,6 +135,7 @@ onload = function() {
 
 </head>
 <body>
+<div id="content">
 <b>恭しく　みほとけを　礼拝したてまつる。</b><br><br><br>
 <div id="result" style="height:90%;"></div>
 <br><br><br>
@@ -159,7 +172,8 @@ onload = function() {
 サウイフモノニ<br>
 ワタシハナリタイ<br>
 <br><br><br>
-<b>ありがとうございました。<br>深層の阿頼耶識に薫重しますように。</b><br>
+<b>ありがとうございました。<br>深層の阿頼耶識に薫重しますように。</b><br><br><br>
+</div>
 <div id="tomaru" style="position:fixed;background-color:green;">うごく</div>
 
 </body></html>
