@@ -1,0 +1,14 @@
+index.htm.original ... index.htm with headers of script which contains "text.js.original ruby.js.original"
+
+index.htm ... for usual use which contains no header of originals
+
+ruby.js ... compressed ruby from ruby.js.original and the variable "flagRuby"
+text.js ... compressed text from text.js.original and the variable "flagText"
+key.js .... contains 4 keys . 3 of them are from compruby... and 1 of them is from comptext...
+	keyletter ........ from comptext.htm
+	key1,key2,key3 ... from compruby.htm
+	"flagKey" ........ variable
+
+ruby.js.original ... text before compressing
+text.js.original ... ruby before compressing
+
