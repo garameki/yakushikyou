@@ -2,7 +2,7 @@
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
-<title>金剛般若経　全文(大蔵経 と 禅門曹洞宗典 より)</title>
+<title>薬師瑠璃光如来本願功徳経　全文(禅門曹洞宗典)</title>
 <style type="text/css">
 body{
   -ms-writing-mode: tb-rl;
@@ -19,6 +19,16 @@ img {
 <script type="application/javascript" src="ruby.js"></script>
 <script type="application/javascript" src="text.js"></script>
 <script type="application/javascript" src="key.js"></script>
+<!--
+<script type="application/javascript" src="ruby.js.original"></script>
+<script type="application/javascript" src="text.js.original"></script>
+<script type="application/javascript">flagKey = true;</script>
+-->
+<!--
+<script type="application/javascript" src="http://garameki.com/articles/yakushikyou/ruby.js"></script>
+<script type="application/javascript" src="http://garameki.com/articles/yakushikyou/text.js"></script>
+<script type="application/javascript" src="http://garameki.com/articles/yakushikyou/key.js"></script>
+-->
 <script type="application/javascript">
 	/* 出典　來馬琢道　著　禅門曹洞宗典　大正八年七月初刊　版 */
 	/* 著作権 国立国会図書館デジタルコレクション Copyright © 2011 National Diet Library. All Rights Reserved. */
@@ -31,18 +41,14 @@ const start=function(){
 let uuu="";for(let ii in comp3) uuu += String.fromCharCode(comp3.charCodeAt(ii)-1);ruby=fff(fff(ddd(uuu,key3,0x61),key2,0x41),key1,0x30).replace(/Y/g," ");})();
 
 
-
 	const letternames = text.split(" ");
 
 	const id = document.getElementById('result');
-	window.addEventListener('resize',function(event) {
-		id.style.height = (window.innerHeight * 0.85).toString() + 'px';
-	},false);
 	const reBNUM = /b\d+/g;
 	const reNUM = /\d+/;
 	let counterRuby = 0;
 	let rubies = ruby.split(/\s/);
-	//console.log(rubies.length);
+	console.log(rubies.length);
 	let letters = [ ];
 	for(letter of letternames) {
 		if(letter == "n") {
@@ -56,7 +62,7 @@ let uuu="";for(let ii in comp3) uuu += String.fromCharCode(comp3.charCodeAt(ii)-
 			for(let ii = 0;ii < num;ii++) {
 					letters += '<img src="../fonts/sp.png">';
 			}
-			//console.log(num);
+			console.log(num);
 		} else {
 			if(counterRuby < rubies.length) {
 				letters += '<ruby><img src="../fonts/' + letter + '.png"><rt>' + rubies[counterRuby] + '</rt></ruby>';;
@@ -69,51 +75,17 @@ let uuu="";for(let ii in comp3) uuu += String.fromCharCode(comp3.charCodeAt(ii)-
 	}
 	id.innerHTML = letters;
 }
-let flagTomaru = true;
-const startScroll = function() {
-	let dd;
-	const hoge = setInterval(function() {
-
-		dd = 10;
-		if(flagTomaru) dd = 0;
-		window.scrollBy(-dd/2,0);
-	},1500/2);
-};
-const prepareScroll = function() {
-	const idTomaru = document.getElementById('tomaru');
-	idTomaru.style.top = (window.innerHeight * 0.9).toString() + 'px';
-	idTomaru.style.left = '0px';
-	idTomaru.style.width = (window.screen.width).toString() + 'px';
-	idTomaru.addEventListener('mouseout',function(event) {
-		flagTomaru = true; 
-	},false);
-	idTomaru.addEventListener('mouseover',function(event) {
-		flagTomaru = false;
-	},false);
-	window.addEventListener('resize',function(event) {
-		idTomaru.style.top = (window.innerHeight * 0.9).toString() + 'px';
-		idTomaru.style.left = '0px';
-		idTomaru.style.width = (window.screen.width).toString() + 'px';
-	},false);
-	
-};
-
 
 onload = function() {
 	let flag1,flag2;
 	let count = 0;
-	prepareScroll();
 	const hoge = setInterval(function() {
 		if(flagRuby && flagText && flagKey) {
 			clearInterval(hoge);
 			start();
-			startScroll();
-			
-		}
-		if(++count > 10) { /* for error */
-			clearInterval(hoge);
 		} else {
 			console.log(count);
+			if(++count > 10) clearInterval(hoge);
 		}
 	},200);
 
@@ -124,7 +96,7 @@ onload = function() {
 </head>
 <body>
 <b>恭しく　みほとけを　礼拝したてまつる。</b><br><br><br>
-<div id="result" style="height:90%;"></div>
+<div id="result"></div>
 <br><br><br>
 &nbsp;&nbsp;雨ニモマケズ<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;宮沢賢治<br>
@@ -159,8 +131,6 @@ onload = function() {
 サウイフモノニ<br>
 ワタシハナリタイ<br>
 <br><br><br>
-<b>ありがとうございました。<br>深層の阿頼耶識に薫重しますように。</b><br>
-<div id="tomaru" style="position:fixed;background-color:green;">うごく</div>
-
+<b>ありがとうございました。深層の阿頼耶識に薫重しますように。</b><br>
 </body></html>
 
