@@ -1,5 +1,5 @@
 (function(){
-keyletter = "ZnnZZs2ZuZoush3ZZku2kuhiiZZgZjZryohoZm4ZZbsutsai5Zakanu3i2oZaZ";
+keyletter = "ZnnZZs2ZuZoush3ZZku2kuhiiZZgZjZryohoZmZb4Zsuts5Zaiakanu3i2oZZh";
 //"ZnnZZs2ZuZoush3ZZkkuu2hiiZZgZjZryohoZm4ZZbsu5Zaitsakanu3i2oZaZ";
 key1 = "うYんYYしくYいYやうYじYによY";
 //"うYんYYしくYいYやうYじつYYに";
