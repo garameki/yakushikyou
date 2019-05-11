@@ -19,21 +19,14 @@ img {
 <script type="application/javascript" src="ruby.js"></script>
 <script type="application/javascript" src="text.js"></script>
 <script type="application/javascript" src="key.js"></script>
-<!--
-<script type="application/javascript" src="ruby.js.original"></script>
-<script type="application/javascript" src="text.js.original"></script>
-<script type="application/javascript">flagKey = true;</script>
--->
-<!--
-<script type="application/javascript" src="http://garameki.com/articles/yakushikyou/ruby.js"></script>
-<script type="application/javascript" src="http://garameki.com/articles/yakushikyou/text.js"></script>
-<script type="application/javascript" src="http://garameki.com/articles/yakushikyou/key.js"></script>
--->
 <script type="application/javascript">
 	/* 出典　來馬琢道　著　禅門曹洞宗典　大正八年七月初刊　版 */
 	/* 著作権 国立国会図書館デジタルコレクション Copyright © 2011 National Diet Library. All Rights Reserved. */
 	/* インターネット公開（保護期間満了）Reserved period has been passed yet. */
 	/* LINK http://dl.ndl.go.jp/info:ndljp/pid/961952 */
+
+
+/* おりんの音はここからいただきました。	音響ラボ https://soundeffect-lab.info/sound/anime/ */
 	
 let ddd=function(eee,ggg,hhh){let ccc=ggg.split("");for(let letter of ccc){re=new RegExp(String.fromCharCode(hhh++),"g");eee=eee.replace(re,letter);}return eee;};let fff=function(eee,ggg,hhh){let ccc=ggg.match(/.{2}/g);for(let letter of ccc){re= new RegExp(String.fromCharCode(hhh++),"g");eee=eee.replace(re,letter);}return eee;};
 const start=function(){
@@ -81,6 +74,8 @@ let uuu="";for(let ii in comp3) uuu += String.fromCharCode(comp3.charCodeAt(ii)-
 }
 let flagTomaru = true;
 const startScroll = function(sIdOfTag) {
+	const idAudio = new Audio();
+	idAudio.src = "../sound/tin2.mp3";
 	const id = document.getElementById(sIdOfTag);
 	let dd;
 	const hoge = setInterval(function() {
@@ -88,7 +83,10 @@ const startScroll = function(sIdOfTag) {
 		if(flagTomaru) dd = 0;
 		window.scrollBy(-dd/2,0);
 		console.log(window.pageXOffset,id.clientWidth - window.innerWidth);
-		if(window.pageXOffset < -id.clientWidth + window.innerWidth) clearInterval(hoge);
+		if(window.pageXOffset < -id.clientWidth + window.innerWidth) {
+			clearInterval(hoge);
+			idAudio.play();
+		}
 	},1500/2);
 };
 const prepareScroll = function() {
@@ -106,6 +104,12 @@ const prepareScroll = function() {
 		idTomaru.style.top = (window.innerHeight * 0.9).toString() + 'px';
 		idTomaru.style.left = '0px';
 		idTomaru.style.width = (window.screen.width).toString() + 'px';
+	},false);
+	const idAudio = new Audio();
+	idAudio.src = '../sound/tin1.mp3';
+	idTomaru.addEventListener('click',function(event) {
+		idAudio.currentTime = 0;
+		idAudio.play();
 	},false);
 	
 };
