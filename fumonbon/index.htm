@@ -7,6 +7,7 @@
 <script type="application/javascript">
 onload = function() {
 
+
 	const rubies = ruby.split(" ");
 
 	const letters = text.split("");
@@ -19,7 +20,11 @@ onload = function() {
 				newText += letter;
 		} else {
 			if(code >0x2FFF && code < 0x302D) {
-				newText += letter;
+				if(code == 0x3005) {
+					newText += "<ruby>" + letter + "<rt>" + rubies[ii++] + "</rt></ruby>";
+				} else {
+					newText += letter;
+				}
 			} else {
 				if(letter == "n") {
 					newText += "<br>";
