@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<script type="application/javascript" src="text.js"></script>
+<script type="application/javascript" src="ruby.js"></script>
+<script type="application/javascript">
+onload = function() {
+
+	const rubies = ruby.split(" ");
+
+	const letters = text.split("");
+	let code;
+	let newText = "";
+	let ii = 0;
+	for(let letter of letters) {
+		code = letter.charCodeAt();
+		if(code > 0x3040 && code < 0x3094) {
+				newText += letter;
+		} else {
+			if(code >0x2FFF && code < 0x302D) {
+				newText += letter;
+			} else {
+				if(letter == "n") {
+					newText += "<br>";
+				} else {
+					newText += "<ruby>" + letter + "<rt>" + rubies[ii++] + "</rt></ruby>";
+				}
+			}
+		}
+	}
+	const idResult = document.getElementById('result');
+	idResult.innerHTML = newText;
+};
+</script>
+</head>
+<body>
+<div id="result"></div>
+</body>
+</html>
