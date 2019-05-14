@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>金剛般若経　全文(大蔵経 と 禅門曹洞宗典 より)</title>
+<style type="text/css">
+body{
+  -ms-writing-mode: tb-rl;
+  writing-mode: vertical-rl;
+  font:black;
+  background-color:black;
+  color:white;
+}
+img {
+	width:20px;
+	filter:invert(100%);
+}
+</style>
+<!--
+<script type="application/javascript" src="ruby.js"></script>
+<script type="application/javascript" src="text.js"></script>
+<script type="application/javascript" src="key.js"></script>
+-->
+<script type="application/javascript" src="ruby.js.original"></script>
+<script type="application/javascript" src="text.js.original"></script>
+<script type="application/javascript">flagKey = true;</script>
+<!--
+<script type="application/javascript" src="http://garameki.com/articles/yakushikyou/ruby.js"></script>
+<script type="application/javascript" src="http://garameki.com/articles/yakushikyou/text.js"></script>
+<script type="application/javascript" src="http://garameki.com/articles/yakushikyou/key.js"></script>
+-->
+<script type="application/javascript">
+	/* 出典　來馬琢道　著　禅門曹洞宗典　大正八年七月初刊　版 */
+	/* 著作権 国立国会図書館デジタルコレクション Copyright © 2011 National Diet Library. All Rights Reserved. */
+	/* インターネット公開（保護期間満了）Reserved period has been passed yet. */
+	/* LINK http://dl.ndl.go.jp/info:ndljp/pid/961952 */
+
+
+/* おりんの音はここからいただきました。	音響ラボ https://soundeffect-lab.info/sound/anime/ */
+	
+let ddd=function(eee,ggg,hhh){let ccc=ggg.split("");for(let letter of ccc){re=new RegExp(String.fromCharCode(hhh++),"g");eee=eee.replace(re,letter);}return eee;};let fff=function(eee,ggg,hhh){let ccc=ggg.match(/.{2}/g);for(let letter of ccc){re= new RegExp(String.fromCharCode(hhh++),"g");eee=eee.replace(re,letter);}return eee;};
+const start=function(){
+(function(){let letter;const rrr=keyletter.match(/.{2}/g);let count=0x3a;const pairs=[];for(letter of rrr)pairs[String.fromCharCode(count++)]=letter;let ttt="";for(letter of comp2)ttt+=String.fromCharCode(letter.charCodeAt(0)-1);let sre,re;let nnn=0;text=ttt;for(sss in pairs){if(++nnn>100) break;sre=sss.replace(/([\[\]\(\)+,.\\?])/g,'\\$1');re=new RegExp(sre,"g");text=text.replace(re,pairs[sss]);}text=text.replace(/Z/g,' ');
+let uuu="";for(let ii in comp3) uuu += String.fromCharCode(comp3.charCodeAt(ii)-1);ruby=fff(fff(ddd(uuu,key3,0x61),key2,0x41),key1,0x30).replace(/Y/g," ");});/*この行の最後の括弧をつけるとdecompressします*/
+
+
+
+	const letternames = text.split(" ");
+
+	const id = document.getElementById('result');
+	window.addEventListener('resize',function(event) {
+		id.style.height = (window.innerHeight * 0.85).toString() + 'px';
+	},false);
+	const reBNUM = /b\d+/g;
+	const reNUM = /\d+/;
+	let counterRuby = 0;
+	let rubies = ruby.split(/\s/);
+	//console.log(rubies.length);
+	let letters = [ ];
+	for(letter of letternames) {
+		if(letter == "n") {
+			letters += "。";
+		} else if(letter == "nl") {
+			letters += "<br>";
+		} else if(letter == "") {
+			//nothing
+		} else if(letter.match(reBNUM)) {
+			let num = Number(letter.match(reNUM));
+			for(let ii = 0;ii < num;ii++) {
+					letters += '<img src="../fonts/sp.png">';
+			}
+			//console.log(num);
+		} else {
+			if(counterRuby < rubies.length) {
+				letters += '<ruby><img src="../fonts/' + letter + '.png"><rt>' + rubies[counterRuby] + '</rt></ruby>';;
+				counterRuby++;
+			} else {
+				letters += '<img src="../fonts/' + letter + '.png">';
+			}
+			
+		}
+	}
+	id.innerHTML = letters;
+}
+let flagTomaru = true;
+const startScroll = function(sIdOfTag) {
+	const idAudio = new Audio();
+	idAudio.src = "../sound/tin2.mp3";
+	const id = document.getElementById(sIdOfTag);
+	let dd;
+	const hoge = setInterval(function() {
+		dd = 10;
+		if(flagTomaru) dd = 0;
+		window.scrollBy(-dd/2,0);
+		console.log(window.pageXOffset,id.clientWidth - window.innerWidth);
+		if(window.pageXOffset < -id.clientWidth + window.innerWidth) {
+			clearInterval(hoge);
+			idAudio.play();
+		}
+	},1500/2);
+};
+const prepareScroll = function() {
+	const idTomaru = document.getElementById('tomaru');
+	idTomaru.style.top = (window.innerHeight * 0.9).toString() + 'px';
+	idTomaru.style.left = '0px';
+	idTomaru.style.width = (window.screen.width).toString() + 'px';
+	idTomaru.addEventListener('mouseout',function(event) {
+		flagTomaru = true; 
+	},false);
+	idTomaru.addEventListener('mouseover',function(event) {
+		flagTomaru = false;
+	},false);
+	window.addEventListener('resize',function(event) {
+		idTomaru.style.top = (window.innerHeight * 0.9).toString() + 'px';
+		idTomaru.style.left = '0px';
+		idTomaru.style.width = (window.screen.width).toString() + 'px';
+	},false);
+	const idAudio = new Audio();
+	idAudio.src = '../sound/tin1.mp3';
+	idTomaru.addEventListener('click',function(event) {
+		idAudio.currentTime = 0;
+		idAudio.play();
+	},false);
+	
+};
+
+
+onload = function() {
+	let flag1,flag2;
+	let count = 0;
+	prepareScroll();
+	const hoge = setInterval(function() {
+		if(flagRuby && flagText && flagKey) {
+			clearInterval(hoge);
+			start();
+			startScroll('content');
+			
+		}
+		if(++count > 10) { /* for error */
+			clearInterval(hoge);
+		} else {
+			console.log(count);
+		}
+	},200);
+
+};
+
+</script>
+
+</head>
+<body>
+<div id="content">
+<b>恭しく　みほとけを　礼拝したてまつる。</b><br><br><br>
+<div id="result" style="height:90%;"></div>
+<br><br><br>
+&nbsp;&nbsp;雨ニモマケズ<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;宮沢賢治<br>
+雨ニモマケズ<br>
+風ニモマケズ<br>
+雪ニモ夏ノ暑サニモマケヌ<br>
+丈夫ナカラダヲモチ
+慾ハナク<br>
+決シテ瞋ラズ<br>
+イツモシヅカニワラッテヰル<br>
+一日ニ玄米四合ト<br>
+味噌ト少シノ野菜ヲタベ<br>
+アラユルコトヲ<br>
+ジブンヲカンヂャウニ入レズニ<br>
+ヨクミキキシワカリ<br>
+ソシテワスレズ<br>
+野原ノ松ノ林ノ蔭ノ<br>
+小サナ萱ブキノ小屋ニヰテ<br>
+東ニ病気ノコドモアレバ<br>
+行ッテ看病シテヤリ<br>
+西ニツカレタ母アレバ<br>
+行ッテソノ稲ノ束ヲ負ヒ<br>
+南ニ死ニサウナ人アレバ<br>
+行ッテコハガラナクテモイイトイヒ<br>
+北ニケンクワヤソショウガアレバ<br>
+ツマラナイカラヤメロトイヒ<br>
+ヒデリノトキハナミダヲナガシ<br>
+サムサノナツハオロオロアルキ<br>
+ミンナニデクノボートヨバレ<br>
+ホメラレモセズ<br>
+クニモサレズ<br>
+サウイフモノニ<br>
+ワタシハナリタイ<br>
+<br><br><br>
+<b>ありがとうございました。<br>深層の阿頼耶識に薫重しますように。</b><br><br><br>
+</div>
+<div id="tomaru" style="position:fixed;background-color:green;">うごく</div>
+
+</body></html>
+

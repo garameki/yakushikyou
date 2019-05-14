@@ -1,0 +1,65 @@
+(function(){
+	text = "";
+	text += "b1 kai3 kyou ge7 nl nl ";
+	text += "mu2 jou7 jin6 jin4 mi2 myou4 hou b2 hyaku2 sen man kou6 nan2 sou13 guu3 nl ga kon ken3 mon toku ju3 ji6 b2 gan ge3 nyo rai shin11 jitsu gi3 nl ";
+	text += "nl nl ";
+
+	text += "b1 san9 ge8 mon6 nl nl ";
+	text += "ga shaku3 sho2 zou3 sho aku gou2 b2 kai2 yuu3 mu2 shi20 ton jin7 chi4 nl juu2 shin ku12 i7 shi7 sho2 shou13 b2 ichi sai ga kon kai2 san9 ge8 nl ";
+	text += "nl nl ";
+
+	text += "b1 san ki3 kai7 nl nl ";
+	text += "na mu2 ki3 e5 butsu b1 na mu2 ki3 e5 hou b1 na mu2 ki3 e5 sou8 b1 ki3 e5 butsu mu2 jou7 son b1 ki3 e5 hou ri3 jin8 son b1 ki3 e5 sou8 wa gou6  son b1 ki3 e5 butsu kyou4 b1 ki3 e5 hou kyou4 b1 ki3 e5 sou8 kyou4 nl ";
+	text += "nl nl ";
+	
+	text += "b1 san ki3 ge7 nl nl ";
+	text += "ji4 ki3 e5 butsu b1 tou4 gan shu shou13 b1 tai3 ge3 dai dou2 b1 hatsu mu2 jou7 shin3 b1 ji4 ki3 e5 hou b1 tou4 gan shu shou13 b1 jin4  nyuu kyou zou b1 chi e2 nyo kai11 b1 ji4 ki3 e5 sou8 b1 tou4 gan shu shou13 b1 tou7 ri4 dai shu b1 ichi sai mu2 ge6 nl ";
+	text += "nl nl ";
+
+
+
+	text += "b1 ma2 ka2 han4 nyaku ha2 ra mitsu ta shin3 kyou nl nl ";
+	text += "kan4 ji4 zai3 bo satsu n gyou2 jin4 han4 nyaku ha2 ra mitsu ta ji n shou7 ken3 go3 on9 kai2 kuu2 n do3 ichi sai ku3 yaku6 n sha12 ri2 ji2 n shiki3 fu2 i14 kuu2 n kuu2 fu2 i14 shiki3 n shiki3 soku4 ze kuu2 n kuu2 soku4 ze shiki3 n ju3 sou14 gyou2 shiki2 n yaku4 bu3 nyo ze n sha12 ri2 ji2 n ze sho hou kuu2 sou n fu2 shou13 fu2 metsu fu2 ku9 fu2 jou6 fu2 zou5 fu2 gen6 n ze ko2 kuu2 chuu n mu2 shiki2 mu2 ju3 sou14 gyou2 shiki2 n mu2 gen7 ni4 bi4 zetsu2 shin i7 n mu2 shiki3 shou10 kou5 mi soku6 hou n mu2 gen7 kai n nai2 shi2 mu2 i7 shiki2 kai n mu2 mu2 myou2 n yaku4 mu2 mu2 myou2 jin3 n nai2 shi2 mu2 rou3 shi13 yaku4 mu2 rou3 shi13 jin3 n mu2 ku3 shuu3 metsu dou2 n mu2 chi yaku4 mu2 toku n i4 mu2 sho2 toku ko2 n bo dai3 satsu ta3 e5 n han4 nyaku ha2 ra mitsu ta ko2 n shin3 mu2 ke8 ge6 n mu2 ke8 ge6 ko2 n mu2 u2 kyou11 fu9 n on10 ri3 ichi sai n ten7 tou12 mu3 sou14 n ku11 kyou4 ne han5 n san se sho butsu e5 han4 nyaku ha2 ra mitsu ta ko2 n toku a noku ta ra san myaku san bo dai3 n ko2 chi3 han4 nyaku ha2 ra mitsu ta n ze dai shin5 shu10 n ze dai myou2 shu10 n ze mu2 jou7 shu10 n ze mu2 tou2 tou2 shu10 n nou2 jo ichi sai ku3 n shin11 jitsu fu2 ko9 n ko2 setsu han4 nyaku ha2 ra mitsu ta shu10 n soku4 setsu shu10 watsu n gya tei5 gya tei5 n ha2 ra gya tei5 n ha2 ra sou8 gya tei5 n bo dai3 satsu ba2 ka2 n han4 nyaku shin3 kyou n nl ";
+	text += "nl nl ";
+	text += " ";
+	text += "nl nl ";
+	text += "myou4 hou ren3 ge5 kyou kan4 se on bo satsu fu11 mon2 hin nl ";
+	text += "b6 you8 shin12 san zou hou shi hato ma ra juu8 fu jou2 yaku2 nl ";
+	text += "ni2 ji mu2 jin3 i7 bo satsu n soku4 juu2 za ki hen dan u ken gatsu shou kou3 butsu n ni sa ze gon2 n se son n kan4 se on bo satsu n i4 ka6 in2 en9 myou kan4 se on n butsu gou5 mu2 jin3 i7 bo satsu n zen nan3 shi10 n nyaku u2 mu2 ryou hyaku2 sen man oku2 shu jou10 n ju3 sho ku3 nou n mon ze kan4 se on bo satsu n ichi shin3 shou19 myou kan4 se on bo satsu n soku4 ji kan4 go2 on shou10 kai2 ge3 datsu nl ";
+	text += "nyaku u2 ji6 ze kan4 se on bo satsu myou sha n setsu2 nyuu dai ka9 ka9 fu2 nou2 shou18 n yuu3 ze bo satsu i3 jin2 riki ko2 nl ";
+	text += "nyaku i2 dai sui3 sho2 hyou n shou19 go2 myou gou soku4 toku sen9 sho3 nl "
+	text += "nyaku u2 hyaku2 sen man oku2 shu jou10 n i2 gu2 kin3 gin ru6 ri sha9 ko13 ba3 nou5 san8 go10 ko14 haku2 shin11 ju11 tou2 hou4 n nyuu o dai kai11 ka15 shi11 koku4 fuu sui8 go2 sen10 hou10 n hyou2 da ra setsu4 ki6 koku n go2 chuu nyaku u2 nai2 shi2 ichi nin shou25 kan4 se on bo satsu myou sha n ze sho nin tou2 kai2 toku ge3 datsu ra setsu4 shi7 nan2 n i4 ze in2 en9 myou kan4 se on nl ";
+	text += "nyaku bu3 u2 nin n rin3 tou4 hi5 gai n shou25 kan4 se on bo satsu myou sha n hi3 sho shitsu8 tou8 jou24 jin9 dan4 dan4 e6 n ni toku ge3 datsu nl ";
+	text += " nyaku san sen dai sen koku do man chuu ya sha11 ra setsu4 n yoku rai nou nin n mon go2 shou25 kan4 se on bo satsu myou sha n ze sho aku ki6 shou14 fu2 nou2 i4 aku gen7 shi22 shi7 n kyou5 bu3 ka5 gai nl ";
+	text += "setsu2 bu3 u2 nin n nyaku u2 zai5 nyaku mu2 zai5 n chuu5 kai13 ka16 sa2 ken13 kei go2 shin n shou25 kan4 se on bo satsu myou sha n kai2 shitsu3 dan2 e4 soku4 toku ge3 datsu n nyaku san sen dai sen koku do man3 chuu en4 zoku3 n u2 ichi shou27 shu11 shou21 sho shou27 nin n sai12 ji6 juu6 hou4 kyou ka3 ken7 ro n go2 chuu ichi nin sa ze shou28 gon2 n sho zen nan3 shi10 motsu3 toku kyou11 fu9 n nyo2 tou2 ou2 tou4 ichi shin3 shou19 kan4 se on bo satsu myou gou n ze bo satsu nou2 i4 mu2 i10 se2 o shu jou10 n nyo2 tou2 nyaku shou25 myou sha n o shi5 en4 zoku3 tou4 toku ge3 datsu n shu shou27 nin mon gu hatsu shou10 gon2 n na mu2 kan4 se on bo satsu n shou25 go2 myou ko2 soku4 toku ge3 datsu n mu2 jin3 i7 n kan4 se on bo satsu ma ka2 satsu n i3 jin2 shi7 riki gi gi nyo ze n nyaku u2 shu jou10 n ta o in4 yoku n jou15 nen2 ku8 gyou kan4 se on bo satsu n ben toku ri3 yoku n nyaku ta shin13 i17 n jou15 nen2 ku8 gyou kan4 se on bo satsu n ben toku ri3 shin13 n nyaku ta gu4 chi4 jou15 nen2 ku8 gyou kan4 se on bo satsu n ben toku ri3 chi4 n mu2 jin3 i7 n kan4 se on bo satsu n u2 nyo ze tou2 dai i3 jin2 riki n ta sho2 nyou2 yaku3 n ze ko2 shu jou10 jou15 ou2 shin3 nen2 n nyaku u2 nyo3 nin n setsu2 yoku gu2 nan3 n rai4 hai3 ku8 gyou kan4 se on bo satsu n ben jou10 fuku doku chi e2 shi7 nan3 n setsu2 yoku gu2 nyo3 n ben jou10 tan shou6 u2 sou shi7 nyo3 n shuku shoku2 doku hon shu nin ai gyou n mu2 jin3 i7 n kan4 se on bo satsu u2 nyo ze riki n nyaku u2 shu jou10 n ku8 gyou rai4 hai3 kan4 se on bo satsu n fuku fu2 tou en10 nl ";
+	text += "ze ko2 shu jou10 n kai2 ou2 ju3 ji6 kan4 se on bo satsu myou gou n mu2 jin3 i7 n nyaku u2 nin ju3 ji6 roku juu3 ni3 oku2 kou7 ga4 sha2 bo satsu myou ji9 n bu3 jin3 gyou3 ku8 you4 on4 jiki i9 fuku2 ga5 gu3 i8 yaku n o nyo2 i7 un ka6 n ze zen nan3 shi10 zen nyo3 nin n ku doku ta fu2 n mu3 jin3 i7 gon2 n jin6 ta se son n butsu gon2 n nyaku bu3 u2 nin n ju3 ji6 kan4 se on bo satsu myou gou n nai2 shi2 ichi ji rai4 hai3 ku8 you4 n ze ni3 nin fuku shou6 tou2 mu2 i14 n o hyaku2 sen man oku2 kou16 fu2 ka10 guu jin3 n mu2 jin3 i7 n ju3 ji6 kan4 se on bo satsu myou gou n toku nyo ze mu2 ryou mu2 hen2 fuku doku shi7 ri2 nl ";
+	text += "mu2 jin3 i7 bo satsu hyaku butsu gon2 n se son n kan4 se on bo satsu n un ka6 yuu shi5 sha14 ba2 se kai n un ka6 ni i2 shu jou10 setsu hou n hou2 ben shi7 riki go2 ji5 un ka6 n butsu gou5 mu2 jin3 i7 bo satsu n zen nan3 shi10 n nyaku u2 koku do shu jou10 ou2 i4 butsu shin toku do3 sha n kan4 se on bo satsu n soku4 gen4 butsu shin ni i2 setsu hou n ou2 i4 heki2 shi21 butsu shin toku do3 sha n soku4 gen4 heki2 shi21 butsu shin ni i2 setsu hou n ou2 i4 shou10 mon shin toku do3 sha n soku4 gen4 shou10 mon shin ni i2 setsu hou n ou2 i4 bon ou shin toku do3 sha n soku4 gen4 bon ou shin ni i2 setsu hou n ou2 i4 tei2 shaku6 shin toku do3 sha n soku4 gen4 tei2 shaku6 shin ni i2 setsu hou n ou2 i4 ji4 zai3 ten shin toku do3 sha n soku4 gen4 ji4 zai3 ten shin ni i2 setsu hou n ou2 i4 dai ji4 zai3 ten shin toku do3 sha soku4 gen4 dai ji4 zai3 ten shin ni i2 setsu hou n ou2 i4 ten dai shou21 gun shin toku do3 sha n soku4 gen4 ten dai shou21 gun shin ni i2 setsu hou n ou2 i4 bi6 sha2 mon2 shin toku do3 sha n soku4 gen4 bi6 sha2 mon2 shin ni i2 setsu hou n ou2 i2 shou26 ou shin toku do3 sha n soku4 gen4 shou26 ou shin ni i2 setsu hou n ou2 i4 chou3 sha shin toku do3 sha n soku4 gen4 chou3 sha shin ni i2 setsu hou n ou2 i4 ko shi3 shin toku do3 sha n soku4 gen4 ko shi3 shin ni i2 setsu hou n ou2 i4 sai13 kan6 shin toku do3 sha n soku4 gen4 sai13 kan6 shin ni i2 setsu hou n ";
+	text += "ou2 i4 ba2 ra mon2 shin toku do3 sha n ";
+	text += "soku4 gen4 ba2 ra mon2 shin ni setsu hou n ";
+	text += "ou2 i4 bi5 ku13 bi5 ku13 ni5 u8 ba2 soku7 u8 ba2 i13 shin toku do3 sha n ";
+	text += "soku4 gen4 bi5 ku13 bi5 ku13 ni5 u8 ba2 soku7 u8 ba2 i13 shin ni setsu hou n ";
+	text += "ou2 i4 chou3 sha ko shi3 sai13 kan6 ba2 ra mon2 fu14 nyo3 shin toku do3 sha n ";
+	text += "soku4 gen4 chou3 sha ko shi3 sai13 kan6 ba2 ra mon2 fu14 nyo3 shin ni setsu hou n ";
+	text += "ou2 i4 dou nan3 dou nyo3 shin toku do3 sha n ";
+	text += "soku4 gen4 dou nan3 dou nyo3 shin ni setsu hou n ";
+	text += "ou2 i4 ten ryuu ya sha11 ken5 datsu4 ba2 a shu4 ra ka7 ru7 ra kin2 na3 ra ma  kou17 ra ka nin hi nin tou2 shin toku do3 sha n ";
+	text += "soku4 kai2 gen4 shi7 shin ni setsu hou n ";
+	text += "ou2 i4 shitsu8 kon4 gou7 shin5 shin toku do3 sha n ";
+	text += "soku4 gen4 shitsu8 kon4 gou7 shin5 shin ni setsu hou n ";
+	text += "mu2 jin3 i7 n kan4 se on bo satsu n jou12 ju9 nyo ze ku doku n i4 shu5 shu5 gyou3 yuu sho koku do n do3 datsu shu jou10 n ze ko2 nyo2 tou2 n ou2 tou4 ichi shin3 ku8 you4 kan4 se on bo satsu ze kan4 se on bo satsu ma ka2 satsu n o fu9 i10 kyuu4 nan2 shi7 chuu n nou2 se2 mu2 i10 n ze ko2 shi5 sha14 ba2 se kai n kai2 gou shi7 i2 se2 mu2 i10 sha n mu2 jin3 i7 bo satsu hyaku butsu gon2 n se son n ga kon tou4 ku8 you4 kan4 se on bo satsu n soku4 ge3 kei8 shu hou4 shu14 you5 raku2 ke9 choku hyaku2 sen ryou10 kin3 n ni i4 yo shi7 n sa ze gon2 n jin10 sha n ju3 shi5 hou se2 chin hou4 you5 raku2 n ji kan4 se on bo satsu fu2 kou18 ju3 shi7 n mu2 jin3 i7 bu3 hyaku kan4 se on bo satsu gon2 n jin10 sha n bin2 ga tou2 ko2 ju3 shi5 you5 raku2 n ni2 ji butsu gou5 kan4 se on bo satsu n tou4 bin2 shi5 mu2 jin3 i7 bo satsu kyuu shi6 shu ten ryuu ya sha11 kan5 datsu4 ba2 a shu4 ra ka7 ru7 ra kin2 na3 ra ma kou17 ra ka nin hi nin tou2 ko2 n ju3 ze you5 raku2 n soku4 ji kan4 se on bo satsu n bin2 sho shi6 shu kyuu o ten ryuu nin hi nin tou2 ko2 n ju3 go2 you5 raku2 n bun sa ni3 bun n ichi bun fu shaku6 ka7 mu4 ni5 butsu n ichi bun fu ta hou4 butsu tou15 n mu2 jin3 i7 n kan4 se on bo satsu n u2 nyo ze ji4 zai3 jin2 riki n yuu o sha14 ba2 se kai nl ";
+	text += " ";
+	text += " ";
+	text += " ";
+	text += " ";
+
+
+
+
+
+	text += "nl nl ";
+	text += "b1 e8 kou3 mon4 nl nl ";
+	text += "gan i4 shi5 ku doku b2 fu11 kyuu o ichi sai nl ga tou2 yo shu shou13 b2 kai2 gu6 jou12 butsu dou2 nl ";
+	text += "nl nl ";
+	flagText = true;
+	
+})();
