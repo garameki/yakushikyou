@@ -1,7 +1,7 @@
 (function(){
-keyletter = "ZnZsnZ2ZuZou3ZshZkkuu2oZZbsuai4ZhiiZtsaZyoZjZmi3ZgZdho7ZdaZieZ";
-key1 = "んYうYYしいYくYYにつYゆYよY";
-key2 = "や1ふYぼYだ3YだYさや47ぼ1しぜYがY27い20にYそ2やYら0しやYむY8らら3じやYじ";
-key3 = "せじさぶごにみとおふかぜこたちはきほいひぢくがけそ";
+keyletter = "2ZZsnZZnuZoushZk4Z3Zkuu2ZbhiZjZgsuintsiZZmkahoanyob2okZiZhu1Zo";
+key1 = "んYうYYしくYつYいYYじYにやう";
+key2 = "や1くわふYぜYYおわ02やYさ0に0しきYやYぼYYせ1し0ぜ0ぼYそさ4お0ゆYYらと320";
+key3 = "じおよむげりこだかいのやちゐぶどゆがたほにごみはせ";
 flagKey = true;
 })();

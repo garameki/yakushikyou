@@ -16,14 +16,14 @@ img {
 	filter:invert(100%);
 }
 </style>
+<!--
 <script type="application/javascript" src="ruby.js"></script>
 <script type="application/javascript" src="text.js"></script>
 <script type="application/javascript" src="key.js"></script>
-<!--
+-->
 <script type="application/javascript" src="ruby.js.original"></script>
 <script type="application/javascript" src="text.js.original"></script>
 <script type="application/javascript">flagKey = true;</script>
--->
 <!--
 <script type="application/javascript" src="http://garameki.com/articles/yakushikyou/ruby.js"></script>
 <script type="application/javascript" src="http://garameki.com/articles/yakushikyou/text.js"></script>
@@ -41,7 +41,7 @@ img {
 let ddd=function(eee,ggg,hhh){let ccc=ggg.split("");for(let letter of ccc){re=new RegExp(String.fromCharCode(hhh++),"g");eee=eee.replace(re,letter);}return eee;};let fff=function(eee,ggg,hhh){let ccc=ggg.match(/.{2}/g);for(let letter of ccc){re= new RegExp(String.fromCharCode(hhh++),"g");eee=eee.replace(re,letter);}return eee;};
 const start=function(){
 (function(){let letter;const rrr=keyletter.match(/.{2}/g);let count=0x3a;const pairs=[];for(letter of rrr)pairs[String.fromCharCode(count++)]=letter;let ttt="";for(letter of comp2)ttt+=String.fromCharCode(letter.charCodeAt(0)-1);let sre,re;let nnn=0;text=ttt;for(sss in pairs){if(++nnn>100) break;sre=sss.replace(/([\[\]\(\)+,.\\?])/g,'\\$1');re=new RegExp(sre,"g");text=text.replace(re,pairs[sss]);}text=text.replace(/Z/g,' ');
-let uuu="";for(let ii in comp3) uuu += String.fromCharCode(comp3.charCodeAt(ii)-1);ruby=fff(fff(ddd(uuu,key3,0x61),key2,0x41),key1,0x30).replace(/Y/g," ");})();/*この行の最後の括弧をつけるとdecompressします*/
+let uuu="";for(let ii in comp3) uuu += String.fromCharCode(comp3.charCodeAt(ii)-1);ruby=fff(fff(ddd(uuu,key3,0x61),key2,0x41),key1,0x30).replace(/Y/g," ");});/*この行の最後の括弧をつけるとdecompressします*/
 
 
 
@@ -87,6 +87,7 @@ const startScroll = function(sIdOfTag) {
 	const idAudio = new Audio();
 	idAudio.src = "../sound/tin2.mp3";
 	const id = document.getElementById(sIdOfTag);
+	window.scrollTo(0,0); /* でバックの時に値を設定します */
 	let dd;
 	const hoge = setInterval(function() {
 		dd = 10;
