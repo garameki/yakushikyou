@@ -61,6 +61,8 @@ let uuu="";for(let ii in comp3) uuu += String.fromCharCode(comp3.charCodeAt(ii)-
 		} else {
 			if(counterRuby < rubies.length) {
 //				letters += '<ruby><img src="../fonts/' + letter + '.png"><rt>' + rubies[counterRuby] + '</rt></ruby>';;
+				letters += '<img src="../fonts/' + letter + '.png" onmousedown="alert(&quot;' + rubies[counterRuby] + '&quot;);">';
+//				letters += '<img src="../fonts/' + letter + '.png">';
 				counterRuby++;
 			} else {
 				letters += '<img src="../fonts/' + letter + '.png">';
