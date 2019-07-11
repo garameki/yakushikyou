@@ -81,7 +81,7 @@ const startScroll = function(sIdOfTag) {
 	const id = document.getElementById(sIdOfTag);
 	let dd;
 	const hoge = setInterval(function() {
-		dd = 20;
+		dd = 30;
 		if(flagTomaru) dd = 0;
 		window.scrollBy(-dd/2,0);
 		console.log(window.pageXOffset,id.clientWidth - window.innerWidth);
